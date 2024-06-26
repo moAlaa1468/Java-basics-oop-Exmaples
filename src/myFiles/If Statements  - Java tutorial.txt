@@ -1,0 +1,135 @@
+================================ If statements ============================
+compiler is working by sequential execution --> we need to change the sequence through control statement
+
+What are the types of control statements :
+	-Selection control statements [if conditions - grade example]
+	-Repetition control statements  [loops]
+
+Syntax For if statement:
+	if(condition) Onestatement  					         ===> This is just one way if
+	if(condition){  }else{}  OR IF(condition)oneStatement ELSE Onestatement    ===> This is two way statement
+
+	-Condition ==> consists of  [value operator value] operators [> , < , == , <= , >= , !=  ]
+
+Task : write a program that accept an integer from the user and in case
+        this integer is even print out the following message
+		"This number is even"   ==> sol: (number % 2 == 0 ) {}else{}
+
+Task: Write a program that accept an integer from the user and print out whether it is positive or negative number
+	sol: if(number > 0) positive else negative
+
+
+================================ What is the nested if statements ========================
+-When you need to check another condition when the first if true
+
+Example of a nested if statement in Java.
+ This example checks a student's grade and attendance to determine if the student passes a course.
+
+	Steps or description:
+ 	The program first prompts the user to enter the student's grade and attendance percentage.
+	It then uses nested if statements to check if the student passes the course.
+	The outer if statement checks if the grade is 60 or higher.
+	Inside the outer if, there is another if statement that checks if the attendance is 75% or higher.
+	Based on the conditions, the program prints whether the student passes or fails the course, 
+	along with the reason for failing if applicable.
+
+Task 2:
+	write a program that accept an integer number from the user,
+ 	in case the number is positive , check and print out whether it is Even or Odd number.
+
+
+=================================== IF - ELSE IF STATEMENT =================================================
+We you will have more than Two condition
+
+
+Task 1:
+	Write a program that ask the user to enter 2 numbers and print out whether they are equal of there is one 
+	which is greater than the other.
+	sol: first == second OR first > second OR first < second
+Task 2:
+	 Here's an example of an if-else-if statement in Java.
+	 This program checks a student's grade and determines their letter grade based on the score.
+	sol: grade may be 90 || 80 || 70 || 60
+
+
+import java.util.Scanner;
+
+public class ElseIfExample {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get the student's grade
+        System.out.print("Enter the student's grade: ");
+        int grade = scanner.nextInt();
+
+        // Determine the letter grade
+        char letterGrade;
+        if (grade >= 90) {
+            letterGrade = 'A';
+        } else if (grade >= 80) {
+            letterGrade = 'B';
+        } else if (grade >= 70) {
+            letterGrade = 'C';
+        } else if (grade >= 60) {
+            letterGrade = 'D';
+        } else {
+            letterGrade = 'F';
+        }
+
+        // Display the letter grade
+        System.out.println("The student's letter grade is: " + letterGrade);
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
+
+
+===================== What if you need to combine more than one condition ==> you need to use logical operators ==========
+
+operators && or ||  
+	Syntax : 	if( first>= 100 || second >= 100){}
+
+
+
+These examples demonstrate how the logical AND (&&) and OR (||) operators work in Java
+to combine multiple conditions in conditional statements.
+----------------------------------------------------------------
+Task 1:
+	In this example, the && operator is used to check if the person is both 18 years old 
+	or older (age >= 18) and a student (isStudent is true).
+	Only if both conditions are true, 
+	the person is eligible for student discounts.
+
+        int age = 25;
+        boolean isStudent = true;
+
+        if (age =< 18 && isStudent) {
+            System.out.println("You are eligible for student discounts.");
+        } else {
+            System.out.println("You are not eligible for student discounts.");
+        }
+
+
+
+--------------------------------------------------------------------
+
+	In this example, the || operator is used to check
+	if it's either the weekend (isWeekend is true) or 
+	a holiday (isHoliday is true). 
+	If at least one of these conditions is true,
+	the message "It's time to relax and enjoy!" is displayed.
+
+
+
+        boolean isWeekend = false;
+        boolean isHoliday = true;
+
+        if (isWeekend || isHoliday) {
+            System.out.println("It's time to relax and enjoy!");
+        } else {
+            System.out.println("You have to work or attend school.");
+        }
+
+-------------------------------------------------------------------------------

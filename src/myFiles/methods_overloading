@@ -1,0 +1,184 @@
+Defining several methods in the
+same class with the same name But they would be different in the
+method signature
+What is the method signature?
+	-method signature is [method name + formal parameters list]
+	-we don't care with returned dataType of the function or the modifiers
+	-we don't care about the parameters' names Just parameters' datatypes
+
+examples:
+    int sum(int x,int y){return x+y;}
+    int sum(int x,int y, int z){return x+y+z;}
+
+    double sum(double x ,double y,double z){return x+y+z;}
+
+    double sum(int x,double y){return x+y;}
+    double sum(double y,int x){return y+x;}
+
+--------------------------------------------
+
+Why to use method overloading:
+-to make your class easy to use
+	ex: when you need to compare between two numbers create a method called larger
+	and if you want to compare between three numbers create a method with the same name
+	but with different signature  ... this will make it more flexible to use your class
+
+
+
+============== [ Real example of methods overloading ]==========
+     Here is an example in Java where we use method overloading to create
+	three functions with the same name, compare, which will be used to compare different numbers of variable
+
+
+public class Comparison {
+
+    // Method to compare two variables
+    public int compare(int a, int b) {
+        if (a > b) {
+            return a;
+        } else {
+            return b;
+        }
+    }
+
+    // Overloaded method to compare three variables
+    public int compare(int a, int b, int c) {
+        if (a > b && a > c) {
+            return a;
+        } else if (b > c) {
+            return b;
+        } else {
+            return c;
+        }
+    }
+
+    // Overloaded method to compare four variables
+    public int compare(int a, int b, int c, int d) {
+        if (a > b && a > c && a > d) {
+            return a;
+        } else if (b > c && b > d) {
+            return b;
+        } else if (c > d) {
+            return c;
+        } else {
+            return d;
+        }
+    }
+
+    public static void main(String[] args) {
+        Comparison comp = new Comparison();
+
+        // Compare two variables
+        int result1 = comp.compare(5, 8);
+        System.out.println("Largest of 5 and 8: " + result1);
+
+        // Compare three variables
+        int result2 = comp.compare(10, 15, 12);
+        System.out.println("Largest of 10, 15, and 12: " + result2);
+
+        // Compare four variables
+        int result3 = comp.compare(23, 19, 27, 25);
+        System.out.println("Largest of 23, 19, 27, and 25: " + result3);
+    }
+}
+
+
+
+
+Explanation:
+Two Variables:
+
+The first compare method takes two integer parameters and returns the larger of the two.
+Three Variables:
+
+The second overloaded compare method takes three integer parameters and returns the largest among them.
+Four Variables:
+
+The third overloaded compare method takes four integer parameters and returns the largest among them.
+
+Usage:
+In the main method, we create an instance of the Comparison class.
+We then call the compare method with different numbers of arguments (two, three, and four) to demonstrate method overloading.
+The output shows the largest number for each set of inputs.
+This example showcases how method overloading allows us to use the same method name for
+different purposes based on the number and type of parameters provided.
+
+
+
+================================================================
+
+Definition of Method Overloading in Java
+Method Overloading is a feature in Java that allows a class to have more than one method with the same name,
+as long as their parameter lists are different.
+This means you can define multiple methods with the same name but with different types, number of parameters, or both.
+ Method overloading is used to increase the readability of the program and to perform a single action in different ways.
+
+Key Points:
+Same Method Name: All overloaded methods must have the same name.
+Different Parameters: The parameters must differ in type or number or both.
+Return Type: Overloaded methods can have different return types,
+	     but the return type alone is not sufficient to distinguish them.
+
+
+---------------------------------------------------------------
+Task 1:
+
+public class Calculator {
+
+    // Method to add two integers
+    public int add(int a, int b) {
+        return a + b;
+    }
+
+    // Overloaded method to add three integers
+    public int add(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static void main(String[] args) {
+        Calculator calc = new Calculator();
+
+        // Calling the method with two arguments
+        System.out.println("Sum of 2 and 3: " + calc.add(2, 3));
+
+        // Calling the overloaded method with three arguments
+        System.out.println("Sum of 2, 3, and 4: " + calc.add(2, 3, 4));
+    }
+}
+
+--------------------------------------------------------------------
+
+
+
+
+
+
+
+
+    int compare(int a, int b){
+        if(a > b){
+            return a;
+        }else
+            return b;
+    }
+    int compare2(int a, int b, int c){
+        if(a > b && a > c){
+            return a;
+        }else if(b > c){
+            return b;
+        }else{
+            return c;
+        }
+    }
+
+ static double compare3(double first, double second,int third,double fourth){
+        if(first>second && first>third && first>fourth){
+            return  first;
+        }else if(second>third&& second>fourth){
+            return second;
+        }else if (third>fourth){
+            return third;
+        }else{
+            return fourth;
+        }
+    }

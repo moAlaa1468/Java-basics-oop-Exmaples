@@ -1,0 +1,110 @@
+------------- Second type of selection statements ----------
+			Switch Statements
+
+Switch statement enables you from make a decision from number of choices
+syntax
+	switch (expression) {
+    case value1:
+        // code to be executed if expression equals value1
+        break;      //Do not forget the break keyword
+    case value2:
+        // code to be executed if expression equals value2
+        break;
+    // you can have any number of case statements
+    default:
+        // code to be executed if expression doesn't match any case
+        break;
+}
+
+
+hint the Expression  must be constant value || integer || expression that equals to integer
+Must not be float  ---> disadavantage
+
+What you must not use in switch statement
+	-float or double value
+	-range of values  if else if statement
+
+-------------------------  How to use some choice together through switch statement --------
+switch(value){
+case value1:
+case value2:
+case value3:
+statements
+break;
+default:
+statements
+break; [optional]
+
+
+Tasks:
+1-Determining the Day of the Week
+
+
+----------------------------------------------------------------------------
+2-calculator Example
+
+ Solution:
+import java.util.Scanner;
+
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Get user input for the first number
+        System.out.print("Enter the first number: ");
+        double num1 = scanner.nextDouble();
+
+        // Get user input for the operator
+        System.out.print("Enter an operator (+, -, *, /): ");
+        char operator = scanner.next().charAt(0);
+
+        // Get user input for the second number
+        System.out.print("Enter the second number: ");
+        double num2 = scanner.nextDouble();
+
+        double result;
+
+        // Perform the calculation based on the operator
+        switch (operator) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error! Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Error! Invalid operator.");
+                break;
+        }
+
+        // Close the scanner
+        scanner.close();
+    }
+}
+
+----------------------------------------------
+Task 3: vowels letters  [a,e,i,o,u]
+scanner.next().charAt(0)
+
+
+-------------------------------------------------
+What are the main difference between switch and nested if
+
+switch is less confusing
+but programmers is forced sometimes to use the nested if Examples Range || selector's type is double or float
+example: if (grade >=10 && grade < 70)
+example: if (salary == 100.90)

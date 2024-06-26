@@ -1,0 +1,124 @@
+we need to pass object to function
+and return some processed objects from this functions ...
+Try to use chaining after processing in the system.out.print()
+
+
+Task :
+create class called Product that has to Attributes [Price and weight ],
+a function to calculate the summation of Two Products' Price and weight
+ [You will use the function that accept object as a parameter and return Object ]
+
+
+----------------------- Bad way --------------------------------
+Product Class will contain:
+	Attributes are:
+		-price
+		-weight
+
+	Methods are:
+		-constructor
+		-getPrice
+		-getWeight
+		-sum (product,product)[Static] || other  solution sum(Product p)
+		-display()
+
+--------------------------------- Try to solve it with another solution -------
+
+
+
+============================================== Longest Way ===========================
+public class Product {
+    // Attributes
+    private double price;
+    private double weight;
+
+    // Constructor
+    public Product(double price, double weight) {
+        this.price = price;
+        this.weight = weight;
+    }
+
+    // Getter for price
+    public double getPrice() {
+        return price;
+    }
+
+    // Getter for weight
+    public double getWeight() {
+        return weight;
+    }
+
+    // Method to calculate sum of two products' price and weight
+    public static Product sum(Product product1, Product product2) {
+        double totalPrice = product1.getPrice() + product2.getPrice();
+        double totalWeight = product1.getWeight() + product2.getWeight();
+        return new Product(totalPrice, totalWeight);
+    }
+
+    // Method to display product details
+    public void displayProductDetails() {
+        System.out.println("Price: $" + price);
+        System.out.println("Weight: " + weight + " kg");
+    }
+
+    // Main method for testing
+    public static void main(String[] args) {
+        Product product1 = new Product(50.0, 2.5);
+        Product product2 = new Product(35.0, 1.8);
+
+        Product sumProduct = Product.sum(product1, product
+
+
+============================================== End of the Longest Way ===========================
+
+
+
+============================================= End of the easiest Way ===========================
+
+
+---------------------------------- This is the first part of the code -------------
+public class Main {
+    public static void main(String[] args) {
+
+    Test test=new Test(10,20);
+    Test secondTestObject=new Test(50,60);
+
+   Test output= test.adding(secondTestObject);
+        System.out.println("The result of adding two Objects' attributes is [length]: "+output.length);
+        System.out.println("The result of adding two Objects' attributes is [width]: "+output.width);
+
+Test secondOutput = test.addingByCreatedAnotherObject(secondTestObject);
+
+        System.out.println("From secondOutput : The result of adding two Objects' attributes is [length]: "+output.length);
+        System.out.println("From secondOutput : The result of adding two Objects' attributes is [width]: "+output.width);
+}
+
+
+----------------------------- Second part of the code -------------------------
+
+
+public class Test {
+    public int length;
+    public int width;
+
+    public Test(){}
+    public Test(int length, int width){
+            this.length= length;
+            this.width=width;
+    }
+    public Test adding(Test test){
+        this.length=this.length+test.length;
+        this.width=this.width+test.width;
+        return this;
+    }
+    public Test addingByCreatedAnotherObject(Test x){
+        Test ResultObject=new Test();
+        ResultObject.width=this.width+x.width;
+        ResultObject.length=this.length+x.length;
+
+        return ResultObject;
+    }
+}
+
+
+--------------------------------------------------------------

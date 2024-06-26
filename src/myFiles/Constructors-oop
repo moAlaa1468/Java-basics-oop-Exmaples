@@ -1,0 +1,305 @@
+			Attributes/Properties of Constructors in Java
+No Return Type: Constructors do not have a return type, not even void. They are not methods, so they don't return anything.
+
+Same Name as Class: A constructor must have the same name as the class in which it resides.
+
+Automatic Invocation: Constructors are automatically called when an object of the class is created.
+
+Can Be Overloaded: You can have multiple constructors in a class with different parameter lists (constructor overloading).
+
+Cannot Be Inherited: Constructors are not inherited by subclasses, but a subclass can call a superclass constructor using super().
+
+Can Use Access Modifiers: Constructors can have access modifiers (public, protected, private) to control the instantiation of objects.
+
+No static, final, or abstract Modifiers: Constructors cannot be declared as static, final, or abstract.
+
+Can Call Other Constructors: Within a class, one constructor can call another constructor using this().
+
+Can Call Superclass Constructors: A constructor can call a constructor of its superclass using super().
+
+Initialize Object State: The primary purpose of a constructor is to initialize the object's state (i.e., assign values to the object's fields).
+
+
+
+
+=====================================================================================================
+
+1-Same Name as Class: The name of the constructor must be the same as the name of the class.
+2-No Return Type: Constructors do not have a return type, not even void.
+3-Called Automatically: A constructor is called automatically when an object is created.
+4-Types of Constructors:
+	Default Constructor: A constructor with no parameters. If no constructor is defined,
+		 Java provides a default constructor.[ For instance, integers will be initialized to 0,
+		 floating points to 0.0, booleans to false, and object references to null.]
+	Parameterized Constructor: A constructor that takes arguments to initialize object attributes.
+3-Constructor Overloading[contructor chaining]: Like other methods, constructors can be overloaded
+		by defining multiple constructors with different parameters
+4-Usage in Inheritance: In inheritance, the super keyword can be used to call the constructor of the parent class.
+
+
+==============================================================
+5- Complete example of using Constructors:
+
+
+
+public class Car {
+    String model;
+    int year;
+
+    // Default Constructor
+    public Car() {
+        this.model = "Unknown";
+        this.year = 0;
+    }
+
+    // Parameterized Constructor
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    public void display() {
+        System.out.println("Model: " + model + ", Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects using different constructors
+        Car car1 = new Car();
+        Car car2 = new Car("Toyota", 2021);
+
+        car1.display(); // Output: Model: Unknown, Year: 0
+        car2.display(); // Output: Model: Toyota, Year: 2021
+    }
+}
+
+
+==========================================================
+
+
+
+
+
+What Are Constructors in Java?
+In Java, a constructor is a special method that is used to initialize objects.
+The constructor is called when an object of a class is created.
+It can be used to set initial values for object attributes and perform any setup or initialization that is required for the object.
+
+Key Points About Constructors:
+
+-------------------------------------
+Same Name as Class: The name of the constructor must be the same as the name of the class.
+
+java
+Copy code
+public class MyClass {
+    // Constructor
+    public MyClass() {
+        // Initialization code
+    }
+}
+
+------------------------------------------------------
+No Return Type: Constructors do not have a return type, not even void.
+
+
+-------------------------------------------------------------------
+Called Automatically: A constructor is called automatically when an object is created.
+
+Types of Constructors:
+
+Default Constructor: A constructor with no parameters. If no constructor is defined, Java provides a default constructor.
+
+java
+Copy code
+public class MyClass {
+    // Default Constructor
+    public MyClass() {
+        System.out.println("Default constructor called");
+    }
+}
+Parameterized Constructor: A constructor that takes arguments to initialize object attributes.
+
+java
+Copy code
+public class MyClass {
+    int value;
+
+    // Parameterized Constructor
+    public MyClass(int value) {
+        this.value = value;
+    }
+}
+
+Constructor Overloading: Like other methods,
+constructors can be overloaded by defining multiple constructors with different parameters.
+
+java
+Copy code
+public class MyClass {
+    int value;
+    String name;
+
+    // Default Constructor
+    public MyClass() {
+        this.value = 0;
+        this.name = "Default";
+    }
+
+    // Parameterized Constructor
+    public MyClass(int value, String name) {
+        this.value = value;
+        this.name = name;
+    }
+}
+
+---------------------------------------------------------------------------------------------------------
+Usage in Inheritance: In inheritance, the super keyword can be used to call the constructor of the parent class.
+
+java
+Copy code
+public class ParentClass {
+    public ParentClass() {
+        System.out.println("Parent constructor called");
+    }
+}
+
+public class ChildClass extends ParentClass {
+    public ChildClass() {
+        super(); // Calls the constructor of ParentClass
+        System.out.println("Child constructor called");
+    }
+}
+Example
+Here’s a simple example demonstrating the use of constructors:
+
+java
+Copy code
+public class Car {
+    String model;
+    int year;
+
+    // Default Constructor
+    public Car() {
+        this.model = "Unknown";
+        this.year = 0;
+    }
+
+    // Parameterized Constructor
+    public Car(String model, int year) {
+        this.model = model;
+        this.year = year;
+    }
+
+    public void display() {
+        System.out.println("Model: " + model + ", Year: " + year);
+    }
+
+    public static void main(String[] args) {
+        // Creating objects using different constructors
+        Car car1 = new Car();
+        Car car2 = new Car("Toyota", 2021);
+
+        car1.display(); // Output: Model: Unknown, Year: 0
+        car2.display(); // Output: Model: Toyota, Year: 2021
+    }
+}
+In this example, the Car class has two constructors: a default constructor and a parameterized constructor.
+Depending on how you create an object,
+the appropriate constructor is called to initialize the object.
+---------------------------------------------------------------------------------------------------
+Example: Using super() with a Parameterized Constructor
+Let's create a scenario with a Person class as the parent and a Student class as the child.
+
+Step 1: Define the Parent Class (Person)
+java
+Copy code
+public class Person {
+    private String name;
+    private int age;
+
+    // Parameterized constructor
+    public Person(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name + ", Age: " + age);
+    }
+}
+Step 2: Define the Child Class (Student)
+java
+Copy code
+public class Student extends Person {
+    private String major;
+
+    // Parameterized constructor that uses super() to call the parent class constructor
+    public Student(String name, int age, String major) {
+        super(name, age); // Call to the parent class (Person) constructor
+        this.major = major;
+    }
+
+    // Overriding the display method to include major
+    @Override
+    public void display() {
+        super.display(); // Call the parent class display method
+        System.out.println("Major: " + major);
+    }
+
+    public static void main(String[] args) {
+        Student student = new Student("Alice", 20, "Computer Science");
+        student.display(); // Output: Name: Alice, Age: 20; Major: Computer Science
+    }
+}
+
+
+
+
+============================================================================
+
+
+================= Example using Constructor Chaining =======================================
+
+public class Student {
+    private String name;
+    private int age;
+    private String major;
+
+    // Default Constructor
+    public Student() {
+        this("Unknown", 0, "Undeclared");
+    }
+
+    // Constructor with one parameter
+    public Student(String name) {
+        this(name, 0, "Undeclared");
+    }
+
+    // Constructor with two parameters
+    public Student(String name, int age) {
+        this(name, age, "Undeclared");
+    }
+
+    // Constructor with three parameters
+    public Student(String name, int age, String major) {
+        this.name = name;
+        this.age = age;
+        this.major = major;
+    }
+
+    public void display() {
+        System.out.println("Name: " + name + ", Age: " + age + ", Major: " + major);
+    }
+
+    public static void main(String[] args) {
+        Student student1 = new Student();
+        Student student2 = new Student("Alice");
+        Student student3 = new Student("Bob", 20);
+        Student student4 = new Student("Charlie", 22, "Computer Science");
+
+        student1.display(); // Output: Name: Unknown, Age: 0, Major: Undeclared
+        student2.display(); // Output: Name: Alice, Age: 0, Major: Undeclared
+        student3.display(); // Output: Name: Bob, Age: 20, Major: Undeclared
+        student4.display(); // Output: Name: Charlie, Age: 22, Major: Computer Science
+    }
+}

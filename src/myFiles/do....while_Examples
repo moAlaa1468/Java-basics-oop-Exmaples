@@ -1,0 +1,139 @@
+
+
+
+ --------------------- Do ..... While loop  ------------------------------
+used to execute the code at least one time .. example if you need to display a menu for user
+And then if he wants to continue he would complete if not he would exit
+
+
+
+
+
+Task 1:
+ 	printing Menu To user
+
+
+    int first=10,second=20;
+    int option;
+    System.out.println(" Here we will display menu for calculation");
+        System.out.println(" 1- Enter 1 if you want to add Two numbers");
+        System.out.println(" 2- Enter 2 if you want to subtract Two numbers");
+        System.out.println(" 3- Enter 3 if you want to divide Two numbers");
+        System.out.println(" 4- Enter 4 if you want to multiply Two numbers");
+        System.out.println(" 5- Enter 0 if you want to Exit the Game");
+
+        System.out.println("----------------------------------------");
+
+        do{
+            option=scanner.nextInt();
+            switch(option){
+                case 1:
+                    System.out.println("summation is :"+ first + second);
+                    break;
+                case 2:
+                    System.out.println("summation is :"+( first - second));
+                    break;
+                case 3:
+                    System.out.println("summation is :"+ first / second);
+                    break;
+
+                case 4:
+                    System.out.println("summation is :"+ first * second);
+                    break;
+                default:
+                    System.out.println("Please enter a valid option");
+                    break;
+            }
+        }while(option!=0);
+System.out.println(" Game is over");
+
+----------------------------------------------------------------------
+
+Task 2:
+		correct password
+
+import java.util.Scanner;
+
+public class PasswordEntrySystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String CORRECT_PASSWORD = "securePassword123";
+        String enteredPassword;
+
+        do {
+            System.out.print("Enter your password: ");
+            enteredPassword = scanner.nextLine();
+
+            if (!enteredPassword.equals(CORRECT_PASSWORD)) {
+                System.out.println("Incorrect password. Please try again.");
+            }
+        } while (!enteredPassword.equals(CORRECT_PASSWORD));
+
+        System.out.println("Password accepted. Access granted.");
+        scanner.close();
+    }
+}
+
+---------------------------------------------------
+    String correctpassword="mohamedamer";
+        String userGuessedPassword;
+        do {
+            System.out.println("Plz enter a password to check if it is correct or not");
+            userGuessedPassword=scanner.nextLine();
+            if(!correctpassword.equals(userGuessedPassword)){
+                System.out.println("please try again");
+            }else{
+                break;
+            }
+
+        }while(!correctpassword.equals(userGuessedPassword));
+        System.out.println("Congratulation , you  won");
+
+
+----------------------------------------------------------
+
+Task 3:
+
+
+
+
+
+Question:
+
+
+
+
+تفكير عكسي
+
+import java.util.Scanner;
+
+public class ATMWithdrawalSystem {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double accountBalance = 1000.00; // Initial account balance
+        double withdrawalAmount;
+
+        do {
+            System.out.print("Enter the amount to withdraw: ");
+            withdrawalAmount = scanner.nextDouble();
+
+            if (withdrawalAmount > accountBalance) {
+                System.out.println("Insufficient balance. Please enter a smaller amount.");
+            } else if (withdrawalAmount <= 0) {
+                System.out.println("Invalid amount. Please enter a positive amount.");
+            }
+
+        } while (withdrawalAmount > accountBalance || withdrawalAmount <= 0);
+
+        accountBalance -= withdrawalAmount;
+        System.out.println("Withdrawal successful. Your new balance is: $" + accountBalance);
+        scanner.close();
+    }
+}
+
+
+
+
+
+
+

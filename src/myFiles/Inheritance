@@ -1,0 +1,123 @@
+
+
+
+
+-----------------------------------------------------------------------
+| Property             | Description                                   |
+-----------------------------------------------------------------------
+| Single Inheritance   | Subclass inherits from only one superclass.    |
+|                      | Java supports single inheritance, meaning a    |
+|                      | class can only extend one other class.         |
+-----------------------------------------------------------------------
+| Multilevel           | Subclasses are derived from one another in a   |
+| Inheritance          | chain, creating a hierarchy where each         |
+|                      | subclass inherits properties and behaviors     |
+|                      | from its direct superclass and indirectly      |
+|                      | from all superclasses above it.                |
+-----------------------------------------------------------------------
+| Hierarchical         | Multiple subclasses inherit from a single      |
+| Inheritance          | superclass, forming a tree-like structure.     |
+|                      | Each subclass can have its own additional      |
+|                      | properties and methods while inheriting        |
+|                      | common characteristics from the superclass.    |
+-----------------------------------------------------------------------
+| Multiple             | Java does not support multiple inheritance,    |
+| Inheritance          | where a subclass can inherit from multiple     |
+|   (Not supported     | superclasses. This is to avoid ambiguity       |
+|   in Java)           | and the diamond problem.                       |
+-----------------------------------------------------------------------
+| Access Modifiers     | Inherited members can be accessed based on    |
+| (Public, Protected,  | their visibility in the superclass. Public    |
+| Private, Default)    | members are accessible to all subclasses      |
+|                      | and classes in the same package. Protected    |
+|                      | members are accessible within the same        |
+|                      | package and by subclasses. Private members    |
+|                      | are only accessible within the declaring      |
+|                      | class. Default (package-private) members      |
+|                      | are accessible within the same package.       |
+-----------------------------------------------------------------------
+| Method Overriding    | Subclass can provide its own implementation   |
+|                      | of a method defined in the superclass.        |
+|                      | The method signature must match that of      |
+|                      | the superclass method being overridden.      |
+-----------------------------------------------------------------------
+| Method Overloading   | Subclass can define multiple methods with    |
+|                      | the same name but different parameters.      |
+|                      | Overloading occurs within the same class     |
+|                      | or in its superclass, allowing for          |
+|                      | multiple methods with the same name but     |
+|                      | different behaviors based on the arguments. |
+-----------------------------------------------------------------------
+| Polymorphism         | Ability of a reference variable to behave   |
+|                      | in different ways based on the actual       |
+|                      | object it refers to. In Java, polymorphism  |
+|                      | is achieved through method overriding       |
+|                      | and method overloading.                     |
+-----------------------------------------------------------------------
+| IS-A Relationship    | Subclass is considered to be a type of its |
+|                      | superclass. This relationship signifies    |
+|                      | that an object of the subclass can be      |
+|                      | treated as an object of the superclass.    |
+-----------------------------------------------------------------------
+| Code Reusability     | Allows reuse of code from superclass in  |
+|                      | subclasses, promoting code organization  |
+|                      | and reducing redundancy.                 |
+-----------------------------------------------------------------------
+
+
+
+
+
+==============================================================================================
+
+
+-------------------------------------------------------------------------------------------------------
+| Type of Inheritance   | Description                                                                 |
+-------------------------------------------------------------------------------------------------------
+| Single Inheritance     | Subclass inherits from only one superclass. This is the most common type of         |
+|                        | inheritance in Java, where a class extends only one other class.                   |
+-------------------------------------------------------------------------------------------------------
+| Multilevel Inheritance | Subclasses are derived from one another in a chain, forming a hierarchy where      |
+|                        | each subclass inherits properties and behaviors from its direct superclass and     |
+|                        | indirectly from all superclasses above it.                                          |
+-------------------------------------------------------------------------------------------------------
+| Hierarchical           | Multiple subclasses inherit from a single superclass, creating a tree-like          |
+| Inheritance            | structure. Each subclass can have its own additional properties and methods       |
+|                        | while inheriting common characteristics from the superclass.                        |
+-------------------------------------------------------------------------------------------------------
+| Multiple Inheritance   | Multiple inheritance allows a subclass to inherit from multiple superclasses.      |
+|   (Not supported in    | This can lead to the diamond problem and ambiguity in method and member            |
+|   Java)                | resolution. Java does not support multiple inheritance to avoid such issues.[interfaces] |
+-------------------------------------------------------------------------------------------------------
+
+
+=======================================================================================
+
+
+
+---------------------------------------------------
+| Access Modifier | Where It Can Be Used           |
+---------------------------------------------------
+| public          | Inherited members are          |
+|                 | accessible to all subclasses   |
+|                 | and classes in the same        |
+|                 | package.                       |
+---------------------------------------------------
+| protected       | Inherited members are          |
+|                 | accessible within the same     |
+|                 | package and by subclasses.     |
+---------------------------------------------------
+| default         | Inherited members are          |
+| (no modifier)   | accessible within the same     |
+|                 | package only.                  |
+---------------------------------------------------
+| private         | Inherited members are          |
+|                 | not accessible in subclasses.  |
+---------------------------------------------------
+
+
+
+
+
+
+

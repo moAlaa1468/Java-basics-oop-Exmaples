@@ -1,0 +1,367 @@
+ here’s a simple description along with examples of objects, their attributes,
+ and operations for your video on Object-Oriented Programming (OOP) in Java:
+
+ Introduction to Objects, Attributes, and Operations in Java | Java Programming Tutorial
+
+Description:
+
+Welcome to our Java programming tutorial! In this video,
+
+ we'll introduce you to the basics of objects, attributes, and operations in Java.
+This tutorial is perfect for beginners who are just starting with Object-Oriented Programming (OOP).
+
+What You’ll Learn:
+Understanding objects in Java.
+Defining attributes (fields) of an object.
+Implementing operations (methods) of an object.
+Simple examples to demonstrate these concepts.
+Examples:
+Defining a Class and Creating Objects:
+A class is a blueprint for creating objects. Objects have attributes (fields) and operations (methods).
+
+java
+Copy code
+// Defining a class
+public class Car {
+    // Attributes (fields)
+    String brand;
+    String color;
+    int year;
+
+    // Operation (method)
+    void displayInfo() {
+        System.out.println("Brand: " + brand);
+        System.out.println("Color: " + color);
+        System.out.println("Year: " + year);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object
+        Car myCar = new Car();
+
+        // Setting attributes
+        myCar.brand = "Toyota";
+        myCar.color = "Red";
+        myCar.year = 2020;
+
+        // Calling a method (operation)
+        myCar.displayInfo(); // Outputs: Brand: Toyota, Color: Red, Year: 2020
+    }
+}
+Another Example with a Different Object:
+Let's create a Student class with attributes and operations.
+
+java
+Copy code
+// Defining a class
+public class Student {
+    // Attributes (fields)
+    String name;
+    int age;
+    String grade;
+
+    // Operation (method)
+    void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Grade: " + grade);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating an object
+        Student student1 = new Student();
+
+        // Setting attributes
+        student1.name = "Alice";
+        student1.age = 20;
+        student1.grade = "A";
+
+        // Calling a method (operation)
+        student1.displayDetails(); // Outputs: Name: Alice, Age: 20, Grade: A
+    }
+}
+Why Watch?
+By the end of this video, you’ll understand how to define and use objects in Java,
+including setting their attributes and calling their methods.
+ This foundational knowledge is essential for anyone starting with Java and OOP.
+ Don’t forget to like, subscribe, and hit the bell icon to stay updated with our latest programming tutorials!
+
+
+
+==================================================================================================================
+
+public class Student {
+    // Attributes (fields)
+    private String name;
+    private String universityId;
+    private String birthDate;
+    private String address;
+    private double gpa;
+    private String studyLevel;
+
+    // Constructor
+    public Student(String name, String universityId, String birthDate, String address, double gpa, String studyLevel) {
+        this.name = name;
+        this.universityId = universityId;
+        this.birthDate = birthDate;
+        this.address = address;
+        this.gpa = gpa;
+        this.studyLevel = studyLevel;
+    }
+
+    // Operation: Modify GPA
+    public void modifyGpa(double newGpa) {
+        this.gpa = newGpa;
+    }
+
+    // Operation: Change Study Level
+    public void changeStudyLevel(String newStudyLevel) {
+        this.studyLevel = newStudyLevel;
+    }
+
+    // Operation: Get Student Name
+    public String getStudentName() {
+        return name;
+    }
+
+    // Operation: Get Student Address
+    public String getStudentAddress() {
+        return address;
+    }
+
+    // Other operations to display student details
+    public void displayStudentDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("University ID: " + universityId);
+        System.out.println("Birth Date: " + birthDate);
+        System.out.println("Address: " + address);
+        System.out.println("GPA: " + gpa);
+        System.out.println("Study Level: " + studyLevel);
+    }
+
+    // Main method to test the class
+    public static void main(String[] args) {
+        // Creating a Student object
+        Student student = new Student("John Doe", "U12345", "1998-05-15", "123 Main St", 3.5, "Undergraduate");
+
+        // Displaying initial student details
+        student.displayStudentDetails();
+
+        // Modifying GPA and Study Level
+        student.modifyGpa(3.8);
+        student.changeStudyLevel("Graduate");
+
+        // Displaying modified student details
+        System.out.println("\nAfter modifications:");
+        student.displayStudentDetails();
+
+        // Getting student name and address
+        System.out.println("\nStudent Name: " + student.getStudentName());
+        System.out.println("Student Address: " + student.getStudentAddress());
+    }
+}
+
+
+Description of the Class and Operations:
+Attributes (Fields):
+
+name: The student's name.
+universityId: The student's university ID.
+birthDate: The student's birth date.
+address: The student's address.
+gpa: The student's Grade Point Average.
+studyLevel: The student's level of study (e.g., Undergraduate, Graduate).
+
+
+
+
+Constructor:
+
+The constructor initializes all the attributes of the Student object.
+
+
+
+
+Operations (Methods):
+
+modifyGpa(double newGpa): Updates the student's GPA.
+changeStudyLevel(String newStudyLevel): Changes the student's level of study.
+getStudentName(): Returns the student's name.
+getStudentAddress(): Returns the student's address.
+displayStudentDetails(): Displays all the details of the student.
+
+
+
+Usage:
+The main method demonstrates creating a Student object, displaying its details, modifying the GPA and study level,
+and then displaying the updated details. It also demonstrates retrieving and printing the student's name and address.
+This class structure encapsulates
+the student's information and provides methods to interact with and modify that information,
+ demonstrating core principles of Object-Oriented Programming in Java.
+
+========================================================= Rectangle Example=====================
+
+public class Rectangle {
+    // Attributes (fields)
+    private double length;
+    private double width;
+
+    // Constructor to initialize the attributes
+    public Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    // Method to calculate the area of the rectangle
+    public double calculateArea() {
+        return length * width;
+    }
+
+    // Method to calculate the perimeter of the rectangle
+    public double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+
+    // Method to get the length of the rectangle
+    public double getLength() {
+        return length;
+    }
+
+    // Method to get the width of the rectangle
+    public double getWidth() {
+        return width;
+    }
+
+    // Method to set a new length for the rectangle
+    public void setLength(double length) {
+        this.length = length;
+    }
+
+    // Method to set a new width for the rectangle
+    public void setWidth(double width) {
+        this.width = width;
+    }
+
+    // Main method to test the Rectangle class
+    public static void main(String[] args) {
+        // Creating a Rectangle object
+        Rectangle myRectangle = new Rectangle(5.0, 3.0);
+
+        // Displaying the attributes of the rectangle
+        System.out.println("Length: " + myRectangle.getLength());
+        System.out.println("Width: " + myRectangle.getWidth());
+
+        // Calculating and displaying the area
+        double area = myRectangle.calculateArea();
+        System.out.println("Area: " + area);
+
+        // Calculating and displaying the perimeter
+        double perimeter = myRectangle.calculatePerimeter();
+        System.out.println("Perimeter: " + perimeter);
+
+        // Modifying the dimensions of the rectangle
+        myRectangle.setLength(6.0);
+        myRectangle.setWidth(4.0);
+
+        // Displaying the modified attributes of the rectangle
+        System.out.println("New Length: " + myRectangle.getLength());
+        System.out.println("New Width: " + myRectangle.getWidth());
+
+        // Recalculating and displaying the new area
+        area = myRectangle.calculateArea();
+        System.out.println("New Area: " + area);
+
+        // Recalculating and displaying the new perimeter
+        perimeter = myRectangle.calculatePerimeter();
+        System.out.println("New Perimeter: " + perimeter);
+    }
+}
+
+
+Attributes (Fields):
+
+length: The length of the rectangle.
+width: The width of the rectangle.
+
+Methods:
+
+calculateArea(): Calculates and returns the area of the rectangle.
+calculatePerimeter(): Calculates and returns the perimeter of the rectangle.
+getLength(): Returns the current length of the rectangle.
+getWidth(): Returns the current width of the rectangle.
+setLength(double length): Sets a new length for the rectangle.
+setWidth(double width): Sets a new width for the rectangle.
+
+
+Main Method Testing :
+
+Tests the Rectangle class by creating a Rectangle object,
+displaying its attributes, calculating and displaying its area and perimeter,
+modifying its dimensions,
+and then recalculating and displaying the new area and perimeter.
+
+=========================== Tasks about oop session 1 ===============
+
+Task 1: Creating a Basic Class
+Objective: Create a simple class and objects.
+
+Instructions:
+Create a class called Book with the following attributes:
+title (String)
+author (String)
+price (double)
+Include a constructor to initialize these attributes.
+Add a method displayDetails() to print the details of the book.
+Create a main method to instantiate at least two Book objects and call their displayDetails() method.
+
+=======================================================
+Task 2: Basic Operations with Methods
+Objective: Implement basic operations within a class.
+
+Instructions:
+Create a class called Circle with the following attributes:
+radius (double)
+Include a constructor to initialize the radius.
+Add methods to calculate the area and circumference of the circle:
+calculateArea(): returns the area.
+calculateCircumference(): returns the circumference.
+Create a main method to instantiate a Circle object and display its area and circumference.
+
+=======================================================
+Task 3:
+Constructor Overloading
+Objective: Understand constructor overloading in a class.
+
+Instructions:
+Create a class called Person with the following attributes:
+name (String)
+age (int)
+address (String)
+Provide two constructors:
+A constructor that initializes only name and age.
+A constructor that initializes all three attributes.
+Add a method displayInfo() to print the person’s information.
+Create a main method to instantiate objects using both constructors and display their information.
+
+======================================================
+Task 4:
+Add validation to attribute setting.
+
+Instructions:
+Create a class called Rectangle with the following attributes:
+length (double)
+width (double)
+Make the attributes private.
+Provide public getter and setter methods for each attribute.
+ Ensure the length and width are positive values in the setters.
+Add methods to calculate the area and perimeter of the rectangle:
+calculateArea(): returns the area.
+calculatePerimeter(): returns the perimeter.
+Create a main method to demonstrate creating a Rectangle object, setting its dimensions, and displaying its area and perimeter.
+
+
+

@@ -1,0 +1,71 @@
+An ArrayList in Java is a resizable array-like data structure
+from the java.util package.
+It allows you to store a dynamically-sized collection of elements,
+ providing more flexibility than a standard array.
+ You can add, remove, and access elements in an ArrayList
+ using various built-in methods. Unlike arrays,
+ ArrayList can grow and shrink automatically as you add or remove elements.
+
+
+
+
+Key Points:
+Resizable: Automatically adjusts its size when elements are added or removed.
+Indexed Access: Elements can be accessed and modified using an index, just like an array.
+Generic: Can store elements of any data type, specified during creation.
+Methods: Provides methods to manipulate the list, such as add(), remove(), get(), and size().
+
+
+-------------------------------------------------------------------------------------------------------
+| Feature          | Array                                      | ArrayList                                  |
+-------------------------------------------------------------------------------------------------------
+| Size             | Fixed size, defined at creation            | Dynamic size, can grow and shrink             |
+-------------------------------------------------------------------------------------------------------
+| Type             | Can hold primitive types and objects       | Can only hold objects (use wrapper classes for primitives) |
+-------------------------------------------------------------------------------------------------------
+| Flexibility      | Size cannot change once set                | Size can change dynamically       |
+-------------------------------------------------------------------------------------------------------
+| Performance      | Generally faster due to fixed size         | Slightly slower due to dynamic resizing |
+-------------------------------------------------------------------------------------------------------
+| Initialization   | int[] arr = new int[5];                    | ArrayList<Integer> list = new ArrayList<>(); |
+-------------------------------------------------------------------------------------------------------
+| Access           | Direct access via index                    | Direct access via index           |
+-------------------------------------------------------------------------------------------------------
+| Methods          | Basic operations only                      | Rich set of methods like add(), remove(), get(), size() |
+-------------------------------------------------------------------------------------------------------
+| Memory Usage     | Less overhead, as it's a fixed structure   | More overhead due to dynamic nature |
+-------------------------------------------------------------------------------------------------------
+
+======================================================  ArrayList examples =============================================
+
+-----------------------------------------------------------------
+| Operation                   | Description                     |
+-----------------------------------------------------------------
+| add(E e)                    | Adds an element to the end of the list. |
+-----------------------------------------------------------------
+| add(int index, E element)   | Inserts an element at the specified position. |
+-----------------------------------------------------------------
+| remove(int index)           | Removes the element at the specified position. |
+-----------------------------------------------------------------
+| remove(Object o)            | Removes the first occurrence of the specified element. |
+-----------------------------------------------------------------
+| get(int index)              | Returns the element at the specified position. |
+-----------------------------------------------------------------
+| set(int index, E element)   | Replaces the element at the specified position with the specified element. |
+-----------------------------------------------------------------
+| size()                      | Returns the number of elements in the list. |
+-----------------------------------------------------------------
+| clear()                     | Removes all elements from the list. |
+-----------------------------------------------------------------
+| isEmpty()                   | Returns true if the list contains no elements. |
+-----------------------------------------------------------------
+| contains(Object o)          | Returns true if the list contains the specified element. |
+-----------------------------------------------------------------
+| indexOf(Object o)           | Returns the index of the first occurrence of the specified element. |
+-----------------------------------------------------------------
+| lastIndexOf(Object o)       | Returns the index of the last occurrence of the specified element. |
+-----------------------------------------------------------------
+| subList(int fromIndex, int toIndex) | Returns a view of the portion of this list between the specified fromIndex, inclusive, and toIndex, exclusive. |
+------------------------------------------------------------------------------------------------------------
+| toArray()                   | Converts the list to an array. |
+-----------------------------------------------------------------

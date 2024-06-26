@@ -1,0 +1,165 @@
+============= Iteration statements ==================
+
+--------------- What is the for loop -----------------
+Any Loop you have to define
+1-initial value for the counter
+2-condition
+3-Applying block of codes
+4-increment counter
+
+
+What is the syntax for this loop:
+In Java, the for loop is used to execute a block of code a specific number of times.
+It has a concise syntax that includes initialization, condition, and increment/decrement steps all in one line.
+Here is the general syntax for a for loop:
+
+for (initialization; condition; update or counter ) {
+    // Code to be executed
+}
+Explanation of the Syntax:
+Initialization: This part is executed once when the loop starts.
+It typically initializes a loop control variable.
+Condition: This is evaluated before each iteration.
+If the condition is true, the loop body is executed. If it is false, the loop terminates.
+Update: This is executed after each iteration of the loop body.
+It usually increments or decrements the loop control variable.
+---------------------------------------- SHAPES OF TYPING FOR LOOP ----------------------
+
+int i=1;
+for(;i<=10;i++)
+print()
+
+----------------
+int i=1;
+for (;i<=10;){
+print
+i++;
+}
+----------------
+int i;
+for(i=0;i++<10;)
+print()
+----------------
+int i;
+for(i=0;++i<10;)
+print()
+-----------
+int i=0;
+for(;;){
+if(i<10)
+{ //block of codes uaAmer }
+i++;
+}
+
+  int count = 0;
+
+        for (;;) {
+            System.out.println("Count: " + count);
+            count++;
+
+            // Break the loop when count reaches 10
+            if (count == 10) {
+                break;
+            }
+        }
+
+        System.out.println("Loop terminated.");
+
+
+--------------------------------------------------------------------------
+
+Task 1:
+	we need To implement the average Example for students With while Loop and For loop:
+
+	        int grade;
+            int sum=0;
+            for (int i = 0; i < 4; i++) {
+               System.out.println(" Enter your grad :");
+               grade=scanner.nextInt();
+               sum+=grade;
+            }
+            System.out.println(" The summation of all grades is :"+ sum);
+
+            //==============================================
+            int studentGrade;
+            int allGrades=0;
+            int counter=0;
+            while(counter<=4){
+                System.out.println(" Enter your grad :");
+                studentGrade=scanner.nextInt();
+                allGrades+=studentGrade;
+                counter++;
+            }
+            System.out.println(" The summation of all grades is :"+ allGrades);
+
+----------------------------------------------------------------------
+
+Task 2:
+	Write a program that prints out numbers from 0 to 10;
+
+------------------------------
+Task 3:
+Write a program that prints out even numbers from  2 to 20 .
+hint You would need to increase the counter with 2
+Enhance your code to bring the summation of even numbers and odd numbers from 2 to 20
+
+   int EvenSum=0;
+        int OddSum=0;
+        for (int i = 2; i < 20; i++) {
+          if(i % 2 == 0){
+              System.out.println("this value is even : "+ i);
+              EvenSum+=i;
+              System.out.println("----------------------------------");
+          }else{
+              System.out.println("this value is odd : "+ i);
+              OddSum+=i;
+          }
+        }
+        System.out.println("The summation of even number is :"+EvenSum);
+        System.out.println("The summation of odd number is :"+OddSum);
+
+---------------------------------------
+
+
+
+
+
+
+Task 4:
+
+Write a program to print out the number from 10 to 0  ( descending order)
+
+---------------------------------------------
+Task 5:
+write a program that calculates the factorial for any positive number.
+factorial(5)=1*2*3*4*5
+  int counter=1;
+   int result=1;
+
+
+    //result = 1*1 =1
+            //result = 1*2 =2
+            //result = 2*3 =6
+            //result = 6*4 = 24
+            //result = 24*5 =120
+
+================================================================
+Task 4:
+Write For loops to print this shape:
+
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+* * * * *
+
+===================================================
+Task 5:
+
+Write For loops to print this shape:
+
+*
+* *
+* * *
+* * * *
+* * * * *

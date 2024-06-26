@@ -1,0 +1,187 @@
+here are two versions of a Student class: one without using Object-Oriented Programming (OOP)
+ principles
+and one using OOP principles.
+
+Before OOP
+In a procedural approach, you might have something like this:
+
+java
+Copy code
+public class StudentProcedural {
+    public static void main(String[] args) {
+        // Attributes for a student
+        String name = "John Doe";
+        int id = 12345;
+        double grade = 85.5;
+
+        // Display student details
+        displayStudentDetails(name, id, grade);
+
+        // Update grade
+        grade = modifyGrade(grade, 90.0);
+
+        // Display updated student details
+        displayStudentDetails(name, id, grade);
+    }
+
+    // Function to display student details
+    public static void displayStudentDetails(String name, int id, double grade) {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Grade: " + grade);
+    }
+
+    // Function to modify the grade
+    public static double modifyGrade(double oldGrade, double newGrade) {
+        return newGrade;
+    }
+}
+
+
+
+After OOP
+Using OOP principles, the code would look like this:
+
+java
+Copy code
+public class Student {
+    // Attributes (fields)
+    private String name;
+    private int id;
+    private double grade;
+
+    // Constructor to initialize the attributes
+    public Student(String name, int id, double grade) {
+        this.name = name;
+        this.id = id;
+        this.grade = grade;
+    }
+
+    // Method to get the student's name
+    public String getName() {
+        return name;
+    }
+
+    // Method to get the student's ID
+    public int getId() {
+        return id;
+    }
+
+    // Method to get the student's grade
+    public double getGrade() {
+        return grade;
+    }
+
+    // Method to set the student's grade with validation
+    public void setGrade(double grade) {
+        if (grade >= 0 && grade <= 100) {
+            this.grade = grade;
+        } else {
+            System.out.println("Invalid grade. It must be between 0 and 100.");
+        }
+    }
+
+    // Method to display student details
+    public void displayDetails() {
+        System.out.println("Name: " + name);
+        System.out.println("ID: " + id);
+        System.out.println("Grade: " + grade);
+    }
+
+    public static void main(String[] args) {
+        // Creating a Student object
+        Student student = new Student("John Doe", 12345, 85.5);
+
+        // Display student details
+        student.displayDetails();
+
+        // Modify the student's grade
+        student.setGrade(90.0);
+
+        // Display updated student details
+        student.displayDetails();
+    }
+}
+Explanation
+Before OOP:
+Procedural approach.
+Functions operate on separate variables.
+No encapsulation: attributes are handled as separate entities, not tied to an object.
+After OOP:
+Object-Oriented approach.
+Encapsulation: attributes (name, id, grade) are tied to the Student class.
+Constructor: initializes the object's state.
+Methods: provide behavior for the object (getName, getId, getGrade, setGrade, displayDetails).
+Validation: setGrade method includes validation logic.
+Improved readability and maintainability: the Student class groups related data and behaviors,
+ making the code more modular and easier to manage.
+
+
+
+
+==============================================================
+Object and classes:
+
+-Class is just the BluePrint [contains attributes and methods[operations | behaviors]
+-Object once you take object from any class it creates a copy in the memory of this class
+ each object is called instance
+
+Example: Scanner userInput=new Scanner(System.in);
+	 Scanner is the class and the object is userInput
+	 userInput [contains the address of the created object that allocated in the memory]
+
+
+
+
+
+What is the difference between Public and Private?
+	-public class member , that means that this member can be accessed by the code inside the class or outside the class
+	-Private member , that means that this member cannot be accessed by the code outside the class , it can only accessed by the code
+	 inside its class
+	===> Access Modifiers [public and private used to apply the concept of ] Data Hiding
+
+====> What is the data Hiding: ==================================
+
+
+Data hiding is a fundamental concept in Object-Oriented Programming (OOP) that
+helps to protect an object's internal state from unwanted access or modification.
+It is primarily achieved by using access modifiers like private and public.
+
+--------------------------------------------------------------------------------
+	Access Modifiers
+	 private: When a class attribute or method is declared as private,
+	 it can only be accessed within the same class.
+	 This prevents external code from directly accessing or modifying the private members.
+---------------------------------------------------------------------------------
+	public: When a class attribute or method is declared as public,
+	it can be accessed from any other class. This is useful for methods
+ 	that are intended to be used by external code to interact with the class.
+
+
+
+
+
+
+
+
+
+Task 1: Creating a Basic Class
+Objective: Create a simple class and objects.
+
+Instructions:
+Create a class called Book with the following attributes:
+title (String)
+author (String)
+price (double)
+
+Add a method displayDetails() to print the details of the book.
+
+=======================================================
+Task 2: Basic Operations with Methods
+Objective: Implement basic operations within a class.
+
+Instructions:
+Create a class called Circle with the following attributes:
+radius (double)
+Add methods to calculate the area  of the circle:
+calculateArea(): returns the area.

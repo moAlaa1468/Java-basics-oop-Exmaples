@@ -1,0 +1,74 @@
+simple example to demonstrate how primitive data types are passed by value in Java:
+
+Pass by Value (Primitive Types)
+When you pass a primitive type (e.g., int, double, char) to a method, Java passes a copy of the value.
+
+
+Pass by (Object References)
+When you pass an object to a method, Java passes a copy of the reference to the object,
+
+
+
+
+--------------------------------------------------------------------------------
+primitive data types : byte | short | int | long | float | char | double | boolean
+
+java
+Copy code
+public class PassByValuePrimitiveExample {
+    public static void main(String[] args) {
+        int originalValue = 10;
+        System.out.println("Before method call: " + originalValue);
+        modifyPrimitive(originalValue);
+        System.out.println("After method call: " + originalValue);
+    }
+
+    public static void modifyPrimitive(int value) {
+        value = 20;
+        System.out.println("Inside method: " + value);
+    }
+}
+Explanation:
+The main method declares an integer variable originalValue and initializes it to 10.
+The value of originalValue is printed before calling the modifyPrimitive method.
+The modifyPrimitive method is called with originalValue as an argument.
+Inside the modifyPrimitive method, the parameter value is assigned a new value (20). This change only affects the local copy of value inside the method.
+The value of originalValue is printed again after the method call to show that it remains unchanged.
+
+
+
+=====================================Passing by reference Objects Mohamed Alaa Amer ============================================
+
+Non primitive data types :
+
+Classes ====> String , integer , ArrayList , HashMap , or your own classes
+
+Interfaces  ===> Map List Set
+
+
+Arrays  ====> int[] , String[]  , Person[]
+
+
+
+
+public class PassByValueReferenceExample {
+    public static void main(String[] args) {
+        MyClass obj = new MyClass();
+        obj.value = 10;
+        System.out.println("Before method call: " + obj.value);
+        modifyObject(obj);
+        System.out.println("After method call: " + obj.value);
+    }
+
+    public static void modifyObject(MyClass obj) {
+        obj.value = 20; // Modifies the object referred to by the reference
+        System.out.println("Inside method: " + obj.value);
+    }
+}
+
+class MyClass {
+    int value;
+}
+
+
+

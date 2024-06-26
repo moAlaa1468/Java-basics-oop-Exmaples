@@ -1,0 +1,107 @@
+=====================Break and Continue ===============================
+Break used to end or exit from the loop
+-Continue statement may be used in all loop statements (for, while, do...while)
+-The continue statements skips the remaining statements inside the loop;
+ and proceeds with the next iteration , if any
+-But continue used to skip the iteration of a loop
+
+
+---------------------------------------------------------------------------
+Task 1:
+	Write simple program to ask user to enter 5 positive numbers
+	And bring the sum of these entered numbers ,
+	But if the user enters a negative number, loop must be exited
+	, In This example use while not for loop
+solution :
+
+
+    int sum=0;int counter=0;int num;
+    while(counter<5){
+        System.out.println("Please enter your number :");
+        num=scanner.nextInt();
+        if(num<0){
+            System.out.println(" the loop existed because you have entered a negative number");
+            break;
+        }
+        sum+=num;
+        counter++;
+    }
+    System.out.println("The sum of all numbers you entered is : "+ sum);
+
+-=--------------------------------------------------------------------------------
+
+Task 2:
+
+
+   int sum=0;int counter=0;int num;
+    while(counter<5){
+        System.out.println("Please enter your number :");
+        num=scanner.nextInt();
+        if(num<0){
+            System.out.println(" the loop existed because you have entered a negative number");
+            continue;
+        }
+        sum+=num;
+        counter++;
+    }
+    System.out.println("The sum of all numbers you entered is : "+ sum);
+
+
+-------------------------------------------------------------------
+
+Task 3:
+
+
+	This example prints numbers from 1 to 10, but skips printing the number 5.
+
+   public class ContinueExample {
+    public static void main(String[] args) {
+        for (int i = 1; i <= 10; i++) {
+            if (i == 5) {
+                continue; // Skip the rest of the loop when i is 5
+            }
+            System.out.println("Number: " + i);
+        }
+    }
+}
+
+
+
+--------------------------------------------------------------------
+
+Task 4:
+	This example prints even numbers from 1 to 10, skipping the odd numbers.
+
+    public class ContinueWhileExample {
+    public static void main(String[] args) {
+        int i = 1;
+        while (i <= 10) {
+            if (i % 2 != 0) {
+                i++;
+                continue; // Skip the rest of the loop for odd numbers
+            }
+            System.out.println("Even Number: " + i);
+            i++;
+        }
+    }
+}
+
+-----------------------------------------------------------
+Task 5:
+
+This example searches for a specific number (7) in an array and exits the loop once the number is found.
+
+
+public class BreakExample {
+    public static void main(String[] args) {
+        int[] numbers = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] == 7) {
+                System.out.println("Number found: " + numbers[i]);
+                break; // Exit the loop when the number is found
+            }
+        }
+    }
+}
+

@@ -1,0 +1,26 @@
+How to take input from the user
+-You will need class called Scanner ; This exists in the util package ; you need to import this package
+-Steps => create object to take the input from the command line
+       => you need to display a message for telling the user what to do
+=========================================================================
+	=> you need to store the input in a variable Take care of the type and the size of each dataType
+	=> Variable is just a location in the memory where you could put data in it and restore it again
+	=> Datatype name ex : string name;
+	=> What is the difference between declaration and initialization
+	=> double , int , String , bool , char ,
+
+
+=========================================================
+Just write a program to find area of the a rectangle:
+ Area = recLength * rectWidth ;
+
+Steps:
+	==> declare Three variables
+	==> Take object from the scanner class
+	==> print msg to get the lenght
+	==> store the length in a variable
+	==> print msg to get the width
+	==> store the length in a width
+	==> calculate the area and print it to the user
+
+

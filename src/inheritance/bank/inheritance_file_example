@@ -1,0 +1,201 @@
+Certainly! Inheritance in Java is a powerful concept that allows
+you to create new classes based on existing ones. Here’s a simple introduction for your video:
+
+Title: Understanding Java Inheritance
+
+Inheritance is all about reusing code and building relationships between classes. Let’s break it down:
+
+Superclass (Parent Class):
+The existing class from which we derive new classes.
+Contains methods and fields that can be inherited.
+Example: Animal class with an eat() method.
+Subclass (Child Class):
+The new class created by inheriting from the superclass.
+Inherits methods and fields from the superclass.
+Example: Dog class extends Animal.
+It can access the eat() method from Animal.
+It can also add its own methods (e.g., bark()).
+
+
+
+
+The image you provided appears to be a class hierarchy diagram in the
+context of object-oriented programming. Let me break down what I see:
+
+1. **Super Class:**
+   - Attributes: Name, Age, Address, Nationality
+   - Methods: setName(), setAge(), setAddress(), setNationality(), getMethods()
+
+2. **Subclasses:**
+   - **Student:**
+     - Attributes: Study_level, Specialization
+     - Methods: set_study_level(), set_specialization(), getters()
+   - **Employee:**
+     - Attributes: Salary, Rank
+     - Methods: setSalary(), setRank(), getters()
+
+3. **Further Subclass:**
+   - **Salaried Employee:**
+     - Additional Attributes: Bonus, Deductions
+     - Methods: setWorkingHours(), setHourRate(), getters()
+
+This diagram illustrates inheritance relationships,
+where subclasses inherit properties from their parent classes. If you have any specific questions or need further clarification, feel free to ask! 😊
+
+
+================================ here is the code of this classess ========================================
+
+class SuperClass {
+    private String name;
+    private int age;
+    private String address;
+    private String nationality;
+
+    public SuperClass(String name, int age, String address, String nationality) {
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.nationality = nationality;
+    }
+}
+
+class Student extends SuperClass {
+    private String studyLevel;
+    private String specialization;
+
+    public Student(String name, int age, String address, String nationality,
+                   String studyLevel, String specialization) {
+        super(name, age, address, nationality);
+        this.studyLevel = studyLevel;
+        this.specialization = specialization;
+    }
+}
+
+class Employee extends SuperClass {
+    private double salary;
+    private String rank;
+
+    public Employee(String name, int age, String address, String nationality,
+                    double salary, String rank) {
+        super(name, age, address, nationality);
+        this.salary = salary;
+        this.rank = rank;
+    }
+}
+
+class SalariedEmployee extends Employee {
+    private double bonus;
+    private double deductions;
+
+    public SalariedEmployee(String name, int age, String address, String nationality,
+                            double salary, String rank, double bonus, double deductions) {
+        super(name, age, address, nationality, salary, rank);
+        this.bonus = bonus;
+        this.deductions = deductions;
+    }
+}
+
+
+
+
+
+
+
+
+============================================== Another Simple example for inheritance ================================
+
+Some Important Tips you need to know before applying inheritance:
+	1- Members of the superclass that are marked private:
+		-are not inherited by the subclass,
+		-exist in memory when the object of the subclass is created
+		-may only be accessed from the subclass by public methods of the superclass.
+	2-members of the superclass that are marked public:
+		-are inherited by the subclass, and may be directly accessed from the subclass
+
+	3-Constructors are not inherited [That's mean you would not be able to modify them but calling them only]
+	4-When a subclass is instantiated, the superclass default constructor is exectued first
+	5-The super keyword refers to an objects' superclass.
+	6-The superclass constructor of the superclass could be called from the child with super keyword.
+	7-paramertizied constructor [for super class] ==> superclass must provide no-arg constructor[empty constructor],
+	8-subclasses must provide a constructor and subclass must call the superclass constructor.
+	9-When you coding the childclass constructor first line of the block must be super()[calling the superClass first]
+
+
+
+class BankAccount {
+    private String accountNumber;
+    private double balance;
+
+    public BankAccount(String accountNumber, double initialBalance) {
+        this.accountNumber = accountNumber;
+        this.balance = initialBalance;
+    }
+
+    public void deposit(double amount) {
+        balance += amount;
+    }
+
+    public void withdraw(double amount) {
+        if (balance >= amount) {
+            balance -= amount;
+        } else {
+            System.out.println("Insufficient funds!");
+        }
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+}
+
+
+-------------------------------------------------------------------------------------------
+using inheritance create these classes:
+BankAccount:
+        String accountNumber
+        double balance
+-----------------------
+    +getBalance
+    +BankAccount(Constructor)
+    +deposit
+    +withdraw
+------------------------
+
+
+SavingsAccount:
+    double interestRate(5%)
+---------------------------
+    +SavingsAccount(constructor)
+    +calculateBalanceWithInterest
+
+
+
+
+
+
+
+class SavingsAccount extends BankAccount {
+    private double interestRate;
+
+    public SavingsAccount(String accountNumber, double initialBalance, double interestRate) {
+        super(accountNumber, initialBalance);
+        this.interestRate = interestRate;
+    }
+
+    public double calculateBalanceWithInterest() {
+        double balanceWithoutInterest = super.getBalance();
+        double interest = balanceWithoutInterest * (interestRate / 100);
+        return balanceWithoutInterest + interest;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create a savings account with 5% interest rate
+        SavingsAccount savingsAccount = new SavingsAccount("SA456", 2000.0, 5.0);
+        savingsAccount.deposit(500.0);
+
+        double balanceWithInterest = savingsAccount.calculateBalanceWithInterest();
+        System.out.println("Savings account balance (with interest): $" + balanceWithInterest);
+    }
+}

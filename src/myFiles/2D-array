@@ -1,0 +1,522 @@
+
+What is a Two-Dimensional Array?
+A two-dimensional array in Java is essentially an array of arrays.
+ It can be thought of as a grid or a table with rows and columns,
+ where each cell can hold a value.
+ This structure is useful for representing data that naturally forms a table,
+ such as a matrix .
+
+Declaring a Two-Dimensional Array
+In Java, a two-dimensional array is declared as follows:
+
+java
+Copy code
+int[][] arrayName;
+To create and initialize the array, you can specify the number of rows and columns:
+
+java
+Copy code
+arrayName = new int[rows][columns];
+Initializing a Two-Dimensional Array
+You can initialize a two-dimensional array when you declare it:
+
+java
+Copy code
+int[][] arrayName = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+Accessing Elements
+To access an element in a two-dimensional array, you use the row and column indices:
+
+java
+Copy code
+int value = arrayName[rowIndex][columnIndex];
+
+Here's a table representation of a two-dimensional array and its values:
+
+Let's consider a simple 3x3 two-dimensional array as an example:
+
+java
+Copy code
+int[][] array = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+Table Representation
+Row\Col	0	1	2
+0	1	2	3
+1	4	5	6
+2	7	8	9
+In this table:
+
+The first row and column represent the indices of the array.
+The intersection of each row and column contains the corresponding value from the two-dimensional array.
+Here’s how you can visualize this two-dimensional array in a table format:
+
+The element at array[0][0] is 1.
+The element at array[0][1] is 2.
+The element at array[0][2] is 3.
+The element at array[1][0] is 4.
+The element at array[1][1] is 5.
+The element at array[1][2] is 6.
+The element at array[2][0] is 7.
+The element at array[2][1] is 8.
+The element at array[2][2] is 9.
+
+
+How to Create and Display a Two-Dimensional Array in Java
+Here’s a Java program to create and print this two-dimensional array in a table-like format:
+
+java
+Copy code
+public class ArrayTable {
+    public static void main(String[] args) {
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Print the table header (column indices)
+        System.out.print("Row\\Col\t");
+        for (int col = 0; col < array[0].length; col++) {
+            System.out.print(col + "\t");
+        }
+        System.out.println();
+
+        // Print the array values
+        for (int row = 0; row < array.length; row++) {
+            // Print the row index
+            System.out.print(row + "\t");
+            for (int col = 0; col < array[row].length; col++) {
+                // Print each element
+                System.out.print(array[row][col] + "\t");
+            }
+            System.out.println();
+        }
+    }
+}
+Explanation
+The program defines a 3x3 two-dimensional array with values.
+It prints the column indices as the header.
+It iterates through each row and column of the array,
+ printing the values in a tab-separated format to create a table-like display.
+This approach helps to visualize the structure and contents of a two-dimensional array in Java.
+
+
+
+=================================================================================================================
+
+Examples of Using Two-Dimensional Arrays
+Example 1: Matrix Addition
+Here's an example of adding two 3x3 matrices:
+
+java
+Copy code
+public class MatrixAddition {
+    public static void main(String[] args) {
+        int[][] matrix1 = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int[][] matrix2 = {
+            {9, 8, 7},
+            {6, 5, 4},
+            {3, 2, 1}
+        };
+
+        int[][] sum = new int[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                sum[i][j] = matrix1[i][j] + matrix2[i][j];
+            }
+        }
+
+        // Print the resulting matrix
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(sum[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+    int[][] matrixOne = {
+                {1, 2, 3,2},
+                {4, 5, 6,3},
+                {7, 8, 9,5}
+        };
+        int[][] matrixTwo={
+                {1, 99, 3,2},
+                {4, 5, 22,3},
+                {7, 8, 88,5}
+        };
+      int[][]result=  addingTwoMatrices(matrixOne,matrixTwo);
+        for (int i = 0; i < result.length; i++) {
+            for (int j = 0; j < result[i].length; j++) {
+                System.out.print(result[i][j]+"\t");
+            }
+            System.out.println();
+        }
+    }
+
+    static int[][] addingTwoMatrices(int[][]x,int[][]y){
+        int[][] sumMatrix=new int[3][4];
+        for (int rowCounter = 0; rowCounter < x.length; rowCounter++) {
+            for (int colCounter = 0; colCounter < x[rowCounter].length; colCounter++) {
+                sumMatrix[rowCounter][colCounter]=x[rowCounter][colCounter]+y[rowCounter][colCounter];
+            }
+        }
+     return sumMatrix;
+    }
+
+
+
+Summary
+Two-dimensional arrays are a powerful tool for managing tabular data in Java.
+They allow you to store and manipulate data in a structured way,
+making them ideal for applications like matrix operations, game boards, and more.
+With the examples provided, you should have a good starting point
+for using two-dimensional arrays in your own Java programs.
+
+
+
+==================================================================================
+
+Task 1:
+ Sum of Elements
+Description: Write a Java program that calculates the sum of all elements in a 3x3 two-dimensional array.
+
+java
+Copy code
+public class SumOfElements {
+    public static void main(String[] args) {
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int sum = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                sum += array[i][j];
+            }
+        }
+        System.out.println("Sum of all elements: " + sum);
+    }
+}
+
+------------------------------------------------------------------------------
+Task 2: Transpose of a Matrix
+Description: Write a Java program that finds the transpose of a 2x3 matrix.
+The transpose of a matrix is obtained by swapping the rows and columns.
+
+java
+Copy code
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+        int[][] transpose = new int[3][2];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        System.out.println("Transpose of the matrix:");
+        for (int i = 0; i < transpose.length; i++) {
+            for (int j = 0; j < transpose[i].length; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+--------------------------------------------------------------------
+Task 3: Diagonal Elements
+Description: Write a Java program to print the diagonal elements of a 3x3 matrix.
+
+java
+Copy code
+public class DiagonalElements {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        System.out.println("Diagonal elements:");
+        for (int i = 0; i < matrix.length; i++) {
+            System.out.print(matrix[i][i] + " ");
+        }
+    }
+}
+
+--------------------------------------------------------------------------------
+Task 4: Row and Column Sum
+Description: Write a Java program that calculates the sum of each row and each
+column in a 3x3 two-dimensional array.
+
+java
+Copy code
+public class RowColumnSum {
+    public static void main(String[] args) {
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Calculate and print row sums
+        for (int i = 0; i < array.length; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                rowSum += array[i][j];
+            }
+            System.out.println("Sum of row " + i + ": " + rowSum);
+        }
+
+        // Calculate and print column sums
+        for (int i = 0; i < array[0].length; i++) {
+            int colSum = 0;
+            for (int j = 0; j < array.length; j++) {
+                colSum += array[j][i];
+            }
+            System.out.println("Sum of column " + i + ": " + colSum);
+        }
+    }
+}
+
+------------------------------------------------------------------------
+Task 5: Identity Matrix Check
+Description: Write a Java program to check if a given 3x3 matrix is an identity matrix.
+ An identity matrix has 1s on the diagonal and 0s elsewhere.
+
+java
+Copy code
+public class IdentityMatrixCheck {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 0, 0},
+            {0, 1, 0},
+            {0, 0, 1}
+        };
+
+        boolean isIdentity = true;
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if (i == j && matrix[i][j] != 1) {
+                    isIdentity = false;
+                    break;
+                } else if (i != j && matrix[i][j] != 0) {
+                    isIdentity = false;
+                    break;
+                }
+            }
+        }
+
+        if (isIdentity) {
+            System.out.println("The matrix is an identity matrix.");
+        } else {
+            System.out.println("The matrix is not an identity matrix.");
+        }
+    }
+}
+
+-----------------------------------------------------------------
+Task 6: Multiply Two Matrices
+Description: Write a Java program to multiply two 3x3 matrices.
+
+java
+Copy code
+public class MatrixMultiplication {
+    public static void main(String[] args) {
+        int[][] matrix1 = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        int[][] matrix2 = {
+            {9, 8, 7},
+            {6, 5, 4},
+            {3, 2, 1}
+        };
+
+        int[][] product = new int[3][3];
+
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                product[i][j] = 0;
+                for (int k = 0; k < 3; k++) {
+                    product[i][j] += matrix1[i][k] * matrix2[k][j];
+                }
+            }
+        }
+
+        // Print the resulting matrix
+        System.out.println("Product of the matrices:");
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                System.out.print(product[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+These tasks cover a range of basic operations and concepts related to two-dimensional arrays,
+providing your students with practical experience and reinforcing their understanding of this important data structure.
+
+
+=====================================================================================
+
+
+ure! Here’s a visual representation of the matrix transpose concept with both an image and a table to make it easier to understand.
+
+Original Matrix
+Consider the original 2x3 matrix:
+
+1	2	3
+4	5	6
+Transposed Matrix
+After transposing the matrix, the rows become columns and the columns become rows, resulting in a 3x2 matrix:
+
+1	4
+2	5
+3	6
+Table Representation
+Original Matrix (2x3)
+Row\Col	0	1	2
+0	1	2	3
+1	4	5	6
+Transposed Matrix (3x2)
+Row\Col	0	1
+0	1	4
+1	2	5
+2	3	6
+Java Code for Transposing a Matrix
+Here's the Java code again to demonstrate the transposition of a matrix:
+
+java
+Copy code
+public class TransposeMatrix {
+    public static void main(String[] args) {
+        int[][] matrix = {
+            {1, 2, 3},
+            {4, 5, 6}
+        };
+
+        int[][] transpose = new int[3][2];
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                transpose[j][i] = matrix[i][j];
+            }
+        }
+
+        System.out.println("Transpose of the matrix:");
+        for (int i = 0; i < transpose.length; i++) {
+            for (int j = 0; j < transpose[i].length; j++) {
+                System.out.print(transpose[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+Visual Diagram
+To further aid understanding, here's a simple visual diagram illustrating the transpose operation:
+
+lua
+Copy code
+Original Matrix:         Transposed Matrix:
+
+ 1  2  3                  1  4
+ 4  5  6    ------->      2  5
+                          3  6
+This visual and tabular representation should help students grasp the concept of matrix transposition more easily.
+
+
+
+============================================================================================================
+
+Tasks :
+--------------------Hint: Try to use functions if you can --------------------------
+  1-Matrix Addition
+  2- Write a Java program that calculates the sum of all elements in a 3x3 two-dimensional array.
+  3- Write a Java program that finds the transpose of a 2x3 matrix.
+     The transpose of a matrix is obtained by swapping the rows and columns.
+  4- Write a Java program to print the diagonal elements of a 3x3 matrix.
+  5- Row and Column Sum
+  6- Write a Java program to check if a given 3x3 matrix is an identity matrix.
+     An identity matrix has 1s on the diagonal and 0s elsewhere.
+  7-Write a Java program to multiply two 3x3 matrices.
+
+
+
+
+
+
+public class RowColumnSum {
+    public static void main(String[] args) {
+        int[][] array = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}
+        };
+
+        // Calculate and print row sums
+        for (int i = 0; i < array.length; i++) {
+            int rowSum = 0;
+            for (int j = 0; j < array[i].length; j++) {
+                rowSum += array[i][j];
+            }
+            System.out.println("Sum of row " + i + ": " + rowSum);
+        }
+
+        // Calculate and print column sums
+        for (int i = 0; i < array[0].length; i++) {
+            int colSum = 0;
+            for (int j = 0; j < array.length; j++) {
+                colSum += array[j][i];
+            }
+            System.out.println("Sum of column " + i + ": " + colSum);
+        }
+    }
+}
+
+     int[][] array = {
+                {1, 2, 3}, // 6
+                {4, 5, 6},
+                {7, 8, 9}
+              //12 ,15 ,18
+        };
+
+        static int[] sumOfRowsAndColumns(int[][] amer){
+                int[] RowSumArray=new int[3];
+                int sumRows=0;
+                int[] RowsAndColumns=new int[2];
+            for (int i = 0; i < amer.length; i++) {
+                 sumRows=0;
+                for (int j = 0; j < amer[i].length; j++) {
+                   sumRows+=amer[i][j];
+                }
+                RowSumArray[i]=sumRows;
+            }
+            return RowSumArray;
+        }

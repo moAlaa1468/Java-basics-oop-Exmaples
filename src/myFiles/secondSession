@@ -1,0 +1,8 @@
+Printing something to the command line
+-print()
+-println() ==> This for printing on the new line
+========== escape sequences ===========
+-\n ==> for the new line ex:  [Big paragraph \n]
+-\t ==> tab ex:               [what about     the coming holiday] OR [name  job description phoneNumber ]
+-\\ ==> escaping character  [location of a file ]
+-\" ==> the print the quotes in the output [Hello , welcome "Mohamed" to java "world" ]

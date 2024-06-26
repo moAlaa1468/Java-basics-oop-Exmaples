@@ -1,0 +1,123 @@
+
+================= Static fields -==============
+
+problem:
+What would you do if you want to count
+the number of object that are taken from the any class
+
+-------------------------------------------------------------
+Example of Static methods Math.random();
+
+It is not logic to take a copy  all functions and attributes in
+the math class in order to use Random method only
+
+so all methods in the Math class is static functions
+
+
+-------------------------
+Static Fields in Java :
+
+Static fields, also known as class variables,
+are variables that belong to the class itself rather than to any specific instance of the class.
+This means that all instances of the class share the same static field.
+The static keyword is used to define such fields.
+
+Key Characteristics of Static Fields:
+
+Only Static method could access the static fields
+put non static methods could access both.
+
+1-Class-Level Scope:
+Static fields are associated with the class itself, not with any particular instance of the class.
+They are initialized when the class is first loaded into memory.
+
+2-Shared Across Instances:
+All instances of the class share the same copy of the static field.
+If one instance changes the value of the static field, the change is reflected across all instances.
+
+
+3-Accessed via Class Name:
+Static fields can be accessed directly using the class name,
+without needing to create an instance of the class.
+Example: ClassName.staticFieldName
+
+
+4-Memory Management:
+Static fields are stored in the method area of the JVM, which is shared among all class instances.
+
+
+====================================================================================
+
+Task:
+	Make class called calc to provide Four static methods for adding , sub , divide , multiply ==>
+	 all these methods must be static
+	And make variable to count all objects taken from this class
+
+
+
+Syntax and Example:
+Here is an example to illustrate the use of static fields in Java:
+
+
+java
+Copy code
+public class Example {
+    // Static field
+    public static int staticField = 10;
+
+    // Instance field
+    public int instanceField = 20;
+
+    public static void main(String[] args) {
+        // Accessing static field using class name
+        System.out.println("Static Field: " + Example.staticField);
+
+        // Creating instances of the Example class
+        Example obj1 = new Example();
+        Example obj2 = new Example();
+
+        // Accessing instance fields using objects
+        System.out.println("Instance Field obj1: " + obj1.instanceField);
+        System.out.println("Instance Field obj2: " + obj2.instanceField);
+
+        // Modifying static field using class name
+        Example.staticField = 30;
+
+        // Changes reflected across all instances
+        System.out.println("Modified Static Field: " + Example.staticField);
+    }
+}
+In this example:
+
+staticField is a static field, meaning it is shared among all instances of the Example class.
+instanceField is an instance field, meaning each instance of the Example class has its own copy.
+Benefits of Using Static Fields:
+Memory Efficiency:
+
+Since static fields are shared across all instances,
+they help save memory when you need a common value for all instances.
+Convenience:
+
+Static fields can be accessed without creating an instance of the class,
+which is useful for utility or configuration values.
+Common Use Cases:
+Constants:
+
+Static fields are often used for defining constants.
+Example: public static final double PI = 3.14159;
+Shared Resources:
+
+Static fields can be used to hold resources that are shared across all instances,
+ such as configuration settings or counters.
+
+
+
+
+
+
+
+Conclusion:
+Static fields in Java provide a way to create variables that belong to the class rather than any specific instance.
+They are useful for saving memory, providing shared resources, and defining constants.
+ Understanding static fields is crucial for
+effective Java programming and designing efficient applications.

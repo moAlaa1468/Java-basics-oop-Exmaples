@@ -1,0 +1,52 @@
+Arithmetic  Operators
+
+addition  +
+subtraction -
+Multiplication *
+Division /
+reminder %
+
+
+=============================================
+precedence of arithmetic operations
+()
+* , / , %
++,-
+
+ex: 2+3 *5
+ex: (2+3) * 5
+
+ex:float + int = float
+ex:double + float = double
+
+
+ex : 9/2
+ex : 9.0 / 2.0
+ex : 5.0/2
+
+float i ;
+double x ; or you would use the casting
+
+
+=============== What is the casting ==================
+System.out.println( (float)i / j );
+
+===========================================
+	Increment and decrement operators
+Increment ++ , decrement --   ====> Most common use in for loops
+
+What is the preincrement and post-increment   ===> ++variable , variable++
+============================================
+sepcial assignment statements called compound assignments
++=
+-=
+/=
+%=
+
+example : x=10 ; x=x+5 ==>  x+=5
+What is the output here :
+int i=9,j=2
+System.out.println(++i * --j * 2);
+
+
+

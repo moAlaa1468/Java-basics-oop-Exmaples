@@ -1,0 +1,169 @@
+Repetition statements
+------------------- While  Loops -------------
+Sometimes we need to repeat a specific actions number of times until
+a particular condition is being satisfied
+
+example :
+ PROBLEM:
+ what will you use if you want to calculate the average of 10 students
+ Will you repeat the code for each student OR you will use loops
+
+
+What are the types of while Loops
+		-While loop
+		-do while loop
+		-for loop
+
+---------------------------------------------
+==> While Loop
+
+
+=====parts of while loop====
+-initial value
+-condition
+-some codes
+-counter or update statement
+
+Here is an example that uses a while loop to print the numbers from 1 to 5:
+
+	int i = 0;         //initial value
+        while (i <= 5) { // condition
+            System.out.println("Number: " + i);   //some codes
+            i++;        // update statement
+        }
+
+Explanation of the Example:
+Initialization: The variable i is initialized to 1.
+Condition: The while loop checks if i is less than or equal to 5.
+Loop Body: If the condition is true, it prints the value of i and then increments i by 1.
+Update Statement: The variable i is incremented to ensure that the condition will eventually become false, stopping the loop.
+Termination: When i becomes greater than 5, the condition i <= 5 evaluates to false, and the loop terminates.
+
+
+Shapes of condition :
+	- while (i<=10)
+	- while  (i>=10 && j<=15)
+	- while (3+6)
+
+--------------------------------------------- Examples or Some Tasks ---------------
+-Task 1
+ Write the program that calculate the average grade of 6 students .
+Don't forget the counter or you will be in the infinity Loop
+------------------------------------------------------------------------
+Task 2 :
+-- Write the program that calculate the average grade of 6 students or  enter -1 to Exit the Loop .
+--- you will use && grade != -1
+Don't forget the counter or you will be in the infinity Loop
+        int grade=0,sum=0;
+        int counter=1;
+    while(counter<=4 && grade != -1){
+        System.out.println("enter you grade or enter -1 if you want to exit ");
+        grade=scanner.nextInt();
+        if(grade == -1)
+        {
+            System.out.println("first must not be 0");
+            counter = 2;
+            break;
+        }
+        if(grade != -1 ){
+            sum+=grade;
+            counter++;
+        }
+    }
+        System.out.println("the counter is :"+ (counter-1));
+        System.out.println("The average of all grades is :" + sum / (counter -1));
+---------------------------------------------------------------------------
+
+
+
+
+
+
+Task 3:
+---- Write a program that asks the user to enter positive
+    numbers at the keyboard which are added together.
+	to stop the addition the user enters a negative number.
+	===> answer use the flag variable
+
+
+
+
+
+
+
+
+
+
+    int number=0,sum=0;
+    boolean flag=true;
+    while(flag){
+        System.out.println(" Enter Your number if you want to continue or enter -1 if you want to exit");
+        number=scanner.nextInt();
+       if(number!=-1){
+           sum+=number;
+       }else{
+           flag=false;
+       }
+    }
+    System.out.println("Your summation is : "+ sum);
+---------------------------------------------------------------------------
+Task 4:
+
+This program simulates a simple system for tracking points earned by students in school for completing assignments.
+ It uses a while loop to interactively allow students to earn points and track their progress.
+
+
+
+      Scanner scanner = new Scanner(System.in);
+        System.out.println("enter yes or no ");
+        int totalPoints = 0; // Initial total points
+        int pointsPerAssignment = 5; // Points earned per assignment
+
+        System.out.println("Welcome to the Student Points Tracking System!");
+
+        while (true) {
+            System.out.println("Your current total points: " + totalPoints);
+            System.out.println("Do you want to complete an assignment? (yes/no): ");
+            String response = scanner.nextLine();
+
+            if (response.equalsIgnoreCase("no")) {
+                break; // Exit the loop if the student does not want to complete more assignments
+            }
+
+            // Complete an assignment
+            System.out.println("Congratulations! You completed an assignment and earned " + pointsPerAssignment + " points.");
+            totalPoints += pointsPerAssignment;
+
+            System.out.println("----------------------");
+        }
+
+---------------------------------------------------------------------------
+Task 5 :
+use the flag variable:
+Write a program that prompts the user to guess a number between 0 and 100 ; then displays an appropriate message
+with each guess. The guess is to be compared with a generated random number.
+ The program also outputs the number of trails at the end.
+     Scanner scanner = new Scanner(System.in);
+    int guess ;
+    int scaledNumber;
+    boolean flag = true;
+    //we need make the computer generate a random number
+      int  randomNumber=(int)(Math.random()*100);
+        scaledNumber=(int)randomNumber;
+        System.out.println(scaledNumber);
+    while(flag){
+        System.out.println("enter a Number to play with us");
+        guess=scanner.nextInt();
+        if(guess<scaledNumber){
+            System.out.println("your number is too small");
+        }else if(guess>scaledNumber){
+            System.out.println("your number is too large");
+        }else{
+            System.out.println("you win ");
+            flag=false;
+        }
+    }
+------------------------------------------------------------------------
+
+
+

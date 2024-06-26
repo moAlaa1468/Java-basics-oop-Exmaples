@@ -1,0 +1,90 @@
+-local variable for a function
+-or for a block inside a function
+Task : use a variable called result in a function
+	-and in a block inside this function
+	-and use it with another function that
+	 would be called by the first function
+
+-----------------
+Global variable is defined outside all function
+and could be used in all functions
+Task: create a global variable to use it anywhere you need
+	and if you want to change its value it is up to you
+
+Hint ? what if you want to print the Global variable within a function
+ 	that modifies the value of the global variable
+	ans: className.globalVariableName
+==============================================
+Hints And Tricks:
+
+   static int globalVariable=20;
+     public static void main(String[] args) {
+         globalVariable=30;
+         int globalVariable=40;
+         System.out.println(globalVariable);
+     }
+}
+
+======================================
+
+  static int globalVariable=20;
+     public static void main(String[] args) {
+         globalVariable=30;
+         System.out.println(globalVariable);
+         {
+             globalVariable=30;
+             int globalVariable=500;
+             System.out.println(globalVariable);
+         }
+         System.out.println(globalVariable);
+     }
+
+
+===============================================
+
+public class Main {
+   static int globalVariable=20;
+     public static void main(String[] args) {
+         globalVariable=30;
+         System.out.println(globalVariable);
+         {
+             globalVariable=30;
+             int globalVariable=500;
+             System.out.println(globalVariable);
+         }
+         System.out.println(globalVariable);
+         printingResult();
+     }
+     public static void printingResult(){
+         globalVariable=444;
+         System.out.println("The value of globalVariable From another function is : "+ globalVariable);
+     }
+}
+
+==============================================
+What if you have two variables with the same name one global and another one is local
+and you need to access the global not local ===> sol. type the className.GlobalVarName
+
+public class Main {
+   static int globalVariable=20;
+     public static void main(String[] args) {
+         globalVariable=30;
+         int globalVariable=66;
+         System.out.println(Main.globalVariable);
+         {
+             globalVariable=30;
+             System.out.println(globalVariable);
+         }
+         System.out.println(globalVariable);
+         printingResult();
+     }
+     public static void printingResult(){
+         globalVariable=444;
+         System.out.println("The value of globalVariable From another function is : "+ globalVariable);
+     }
+}
+
+
+
+
+==================================================================

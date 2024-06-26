@@ -1,0 +1,253 @@
+-----------------------------------------------------------------------
+| Overriding in Java refers to the ability of a subclass to provide a  |
+| specific implementation for a method that is already defined in its  |
+| superclass.                                                          |
+|                                                                      |
+| This means that the subclass provides its own version of the method  |
+| with the same name, return type, and parameters as the method in the |
+| superclass.                                                          |
+|                                                                      |
+| Key points about method overriding in Java:                          |
+|                                                                      |
+| - Inheritance: Overriding is a feature of inheritance, where a       |
+|   subclass inherits methods and attributes from its superclass.      |
+| - Method Signature: The overriding method in the subclass must have  |
+|   the same method signature (name, return type, and parameters) as   |
+|   the method in the superclass.                                      |
+| - Access Modifiers: The overriding method in the subclass must have  |
+|   the same or wider access modifier (public, protected) compared to  |
+|   the method in the superclass.                                      |
+| - Annotation: While not required, it's a good practice to use the    |
+|   @Override annotation to explicitly indicate that a method is       |
+|   intended to override a superclass method. This helps prevent       |
+|   accidental method signature changes that could lead to errors.     |
+-----------------------------------------------------------------------
+
+
+
+
+
+Task:
+
+Class: Employee
+Attributes:
+name: String
+baseSalary: double
+Methods:
+calculateSalary(): double
+
+
+Class: Manager (extends Employee)
+Attributes:
+bonus: double
+Methods:
+calculateSalary(): double (overrides Employee's calculateSalary() method)
+
+
+Class : Developer
+Attributes:
+name: String (inherited from Employee class)
+baseSalary: double (inherited from Employee class)
+WorkedHours : int
+hourPrice: double
+Methods:
+calculateSalary(): double (overrides Employee's calculateSalary() method)
+
+
+
+
+
+
+
+
+ // Override calculateSalary() method to include overtime pay
+    @Override
+    public double calculateSalary() {
+        int overTimeHours=workedHours-40;
+        double overTimePrice=overTimeHours*1.5*hourPrice;
+        double result=baseSalary+overTimePrice;
+        return result;
+    }
+
+
+
+
+-----------------------------------------------------------
+
+
+// Superclass: Shape
+class Shape {
+    public void draw() {
+        System.out.println("Drawing a shape");
+    }
+}
+
+
+// Subclass: Circle
+class Circle extends Shape {
+    private double radius;
+
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+
+    // Overriding the draw() method from the superclass
+    @Override
+    public void draw() {
+	super.draw();
+        System.out.println("Drawing a circle with radius " + radius);
+    }
+
+    // Additional method specific to Circle class
+    public double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        // Create an instance of Circle
+        Circle circle = new Circle(5.0);
+
+        // Call overridden draw() method
+        circle.draw();
+
+        // Call method specific to Circle class
+        double area = circle.calculateArea();
+        System.out.println("Area of the circle: " + area);
+    }
+}
+
+
+================================== Another Example =======================
+// Superclass: Employee
+class Employee {
+    private String name;
+    private double baseSalary;
+
+    public Employee(String name, double baseSalary) {
+        this.name = name;
+        this.baseSalary = baseSalary;
+    }
+
+    // Method to calculate salary (to be overridden by subclasses)
+    public double calculateSalary() {
+        return baseSalary;
+    }
+
+    // Getters and setters
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public double getBaseSalary() {
+        return baseSalary;
+    }
+
+    public void setBaseSalary(double baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+}
+
+// Subclass: Manager
+class Manager extends Employee {
+    private double bonus;
+
+    public Manager(String name, double baseSalary, double bonus) {
+        super(name, baseSalary);
+        this.bonus = bonus;
+    }
+
+    // Override calculateSalary() method to include bonus
+    @Override
+    public double calculateSalary() {
+        return super.getBaseSalary() + bonus;
+    }
+}
+
+// Subclass: Developer
+class Developer extends Employee {
+    private int hoursWorked;
+    private double hourlyRate;
+
+    public Developer(String name, double baseSalary, int hoursWorked, double hourlyRate) {
+        super(name, baseSalary);
+        this.hoursWorked = hoursWorked;
+        this.hourlyRate = hourlyRate;
+    }
+
+    // Override calculateSalary() method to include overtime pay
+    @Override
+    public double calculateSalary() {
+        double baseSalary = super.getBaseSalary();
+        double overtimePay = (hoursWorked > 40) ? (hoursWorked - 40) * hourlyRate * 1.5 : 0;
+        return baseSalary + overtimePay;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Employee employee1 = new Manager("John Doe", 50000, 10000); // Manager object
+        Employee employee2 = new Developer("Jane Smith", 60000, 45, 50); // Developer object
+
+        // Calculate and display salaries
+        System.out.println(employee1.getName() + "'s salary: $" + employee1.calculateSalary());
+        System.out.println(employee2.getName() + "'s salary: $" + employee2.calculateSalary());
+    }
+}
+
+================================ Anther example of overriding ==============================
+// Parent class
+class Animal {
+    // Method to be overridden
+    public void sound() {
+        System.out.println("Animal makes a sound");
+        System.out.println("This sound is generic and can vary depending on the type of animal.");
+    }
+}
+
+// Child class
+class Dog extends Animal {
+    // Overriding the sound method
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+        System.out.println("Dogs bark to communicate with humans and other animals.");
+        System.out.println("A bark can indicate excitement, alertness, or a request for attention.");
+    }
+}
+
+// Child class
+class Cat extends Animal {
+    // Overriding the sound method
+    @Override
+    public void sound() {
+        System.out.println("Cat meows");
+        System.out.println("Cats meow to communicate with humans.");
+        System.out.println("A meow can indicate hunger, affection, or a request for attention.");
+    }
+}
+
+// Main class to test the method overriding
+public class Main {
+    public static void main(String[] args) {
+        Animal myAnimal = new Animal(); // Create an Animal object
+        Animal myDog = new Dog();       // Create a Dog object
+        Animal myCat = new Cat();       // Create a Cat object
+
+        System.out.println("Animal:");
+        myAnimal.sound(); // Calls the sound method from Animal class
+
+        System.out.println("\nDog:");
+        myDog.sound();    // Calls the overridden sound method from Dog class
+
+        System.out.println("\nCat:");
+        myCat.sound();    // Calls the overridden sound method from Cat class
+    }
+}
+
+

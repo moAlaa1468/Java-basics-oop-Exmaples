@@ -1,0 +1,145 @@
+
+======================== Abstraction =============================
+-----------------------------------------------------------------------------------------------------------
+| Property                | Description                                                                    |
+-----------------------------------------------------------------------------------------------------------
+| Definition              | Abstraction is the concept of hiding the complex implementation details of a    |
+|                         | system and exposing only the necessary and relevant parts to the user.         |
+-----------------------------------------------------------------------------------------------------------
+| Abstract Classes        | Cannot be instantiated on their own. Meant to be subclassed. Can contain both   |
+|                         | abstract methods (without a body) and concrete methods (with a body).          |
+-----------------------------------------------------------------------------------------------------------
+| Abstract Methods        | Declared without an implementation in the abstract class. Must be implemented  |
+|                         | in the subclass.                                                               |
+-----------------------------------------------------------------------------------------------------------
+| Interfaces              | Define a contract that implementing classes must follow. Can contain only      |
+|                         | abstract methods (until Java 8, which introduced default and static methods in |
+|                         | interfaces).                                                                   |
+-----------------------------------------------------------------------------------------------------------
+| Inheritance             | Abstraction is a feature of inheritance where a subclass inherits methods and  |
+|                         | attributes from its superclass.                                               |
+-----------------------------------------------------------------------------------------------------------
+| Method Signature        | Overriding methods in the subclass must have the same method signature (name,  |
+|                         | return type, and parameters) as the method in the superclass.                  |
+-----------------------------------------------------------------------------------------------------------
+| Access Modifiers        | Overriding methods in the subclass must have the same or broader access        |
+|                         | modifier (public, protected) compared to the method in the superclass.         |
+-----------------------------------------------------------------------------------------------------------
+| @Override Annotation    | Good practice to use the @Override annotation to explicitly indicate that a    |
+|                         | method is intended to override a superclass method. Helps prevent accidental   |
+|                         | method signature changes.                                                     |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+=============================================================================================================
+
+-----------------------------------------------------------------------------------------------------------
+| Topic                | Description                                                                      |
+-----------------------------------------------------------------------------------------------------------
+| Definition           | Abstraction is the concept of hiding the complex implementation details of a     |
+|                      | system and exposing only the necessary and relevant parts to the user.           |
+-----------------------------------------------------------------------------------------------------------
+| Key Points           | - Abstract Classes: Cannot be instantiated on their own and are meant to be      |
+|                      |   subclassed. Can have both abstract methods (without a body) and concrete       |
+|                      |   methods (with a body).                                                         |
+|                      | - Abstract Methods: Do not have an implementation in the abstract class and must |
+|                      |   be implemented in the subclass.                                                |
+|                      | - Interfaces: Define a contract that implementing classes must follow. Can only  |
+|                      |   contain abstract methods (until Java 8, which introduced default and static    |
+|                      |   methods in interfaces).                                                        |
+-----------------------------------------------------------------------------------------------------------
+| Example              | ```java                                                                          |
+|                      | abstract class Animal {                                                          |
+|                      |     public abstract void makeSound();                                            |
+|                      |     public void sleep() {                                                        |
+|                      |         System.out.println("Zzz...");                                            |
+|                      |     }                                                                            |
+|                      | }                                                                                |
+|                      | class Dog extends Animal {                                                       |
+|                      |     public void makeSound() {                                                    |
+|                      |         System.out.println("Woof");                                              |
+|                      |     }                                                                            |
+|                      | }                                                                                |
+|                      | public class Main {                                                              |
+|                      |     public static void main(String[] args) {                                     |
+|                      |         Dog myDog = new Dog();                                                   |
+|                      |         myDog.makeSound(); // Outputs: Woof                                      |
+|                      |         myDog.sleep();     // Outputs: Zzz...                                    |
+|                      |     }                                                                            |
+|                      | }                                                                                |
+|                      | ```                                                                              |
+-----------------------------------------------------------------------------------------------------------
+
+
+
+
+================================ Example of Abstraction ===============================
+Create a simple Java application that demonstrates the concept of abstraction.
+The application should involve creating abstract classes and
+implementing their abstract methods in subclasses.
+
+Instructions:
+Create an Abstract Class:
+
+Create an abstract class named Shape with the following properties and methods:
+An abstract method calculateArea().
+An abstract method calculatePerimeter().
+A concrete method display() that prints out "Shape details".
+Create Subclasses:
+
+Create two subclasses of Shape named Circle and Rectangle.
+Implement the abstract methods calculateArea() and calculatePerimeter() in both subclasses.
+
+
+abstract class Shape {
+    abstract double calculateArea();
+    abstract double calculatePerimeter();
+
+    void display() {
+        System.out.println("Shape details");
+    }
+}
+
+
+=============================
+class Circle extends Shape {
+    double radius;
+
+    Circle(double radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateArea() {
+        return Math.PI * radius * radius;
+    }
+
+    @Override
+    double calculatePerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+========================================
+class Rectangle extends Shape {
+    double length, width;
+
+    Rectangle(double length, double width) {
+        this.length = length;
+        this.width = width;
+    }
+
+    @Override
+    double calculateArea() {
+        return length * width;
+    }
+
+    @Override
+    double calculatePerimeter() {
+        return 2 * (length + width);
+    }
+}
+
+
+
+

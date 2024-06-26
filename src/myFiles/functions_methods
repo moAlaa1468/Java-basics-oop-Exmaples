@@ -1,0 +1,103 @@
+============ Functions of Methods in Java =========
+What are Functions (Methods)?
+
+In Java, a function (referred to as a method) is a block of code that performs a specific task.
+Methods are used to organize and structure your code, making it more readable, reusable, and maintainable.
+
+Why Use Methods
+Code Reusability:
+Methods allow you to write a piece of code once and reuse
+it multiple times throughout your program.
+This reduces redundancy and helps keep your code DRY (Don't Repeat Yourself).
+In real life problems include hundreds and even thousands of
+lines === so you will need to use methods or functions
+
+
+===> you will divide your code to small parts
+function is a self-contained block
+ 	of statements that perform a specific task;
+----------------------------------------------
+Using a function is something like a person to do a specific job for you.
+
+function maximum is 15 lines of code. [small units]
+
+public ==> could be called from this class or outside this class
+static ==> to call the function inside a specific class without taking object from this class
+
+
+Syntax for typing function:
+
+accessModifier returnType methodName(parameters) {
+    // Method body
+    // Code to be executed
+
+}
+
+
+1-
+	returned-value-type fucntionName(parameters-list){
+	block of code
+	}
+2-Invoking[calling] function(from the main())
+	functionName(actual parameter-list)
+-----------------------------------------------------
+What are the types of functions:
+	Built in functions(ready Made)
+	abs() | pow() | floor() | sqrt()
+	ex: Math.random();
+
+Task 1:
+calculate and print out the sum and the average of 3 students marks.
+
+
+
+--------------------------------------------------------------------
+Task 2:
+	Write a function that draws line To use it as separator between your codes.
+	.Hint You need to give the function the number of stars used for creating the line and the charSHape
+
+
+
+---------------------------------------------------------------
+Task 3:
+	Make any function That takes any inputs and return any outputs ex: sum function
+	 ... you have to return a value.If use this function in another expression
+Task 4:
+	create a function [average] that uses another function (sum) To print the average of Four Numbers
+	and create separator function to display the output of the average and the sum of these four Numbers:
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+Task 5:
+	Bring the factorial of any number that user enters .. only user methods
+
+
+	    int fact=1;
+            for (int i = 1; i <=6; i++){
+                fact=fact*i;
+
+            }
+
+public class RecursiveMethod {
+    // Recursive method to calculate factorial
+    public static int factorial(int n) {
+        if (n == 0) {
+            return 1; // Base case
+        } else {
+            return n * factorial(n - 1); // Recursive call
+        }
+    }
+
+    public static void main(String[] args) {
+        // Method call
+        int result = factorial(5);
+        System.out.println("Factorial of 5 is: " + result);
+    }
+}
+
+

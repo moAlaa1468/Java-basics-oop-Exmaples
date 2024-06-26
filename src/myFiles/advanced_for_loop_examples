@@ -1,0 +1,139 @@
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+
+
+
+
+
+
+
+initial counter will depend on outerCounter to print spaces
+and second loop will depend on 2*outerCounter - 1  and the initial will be 1
+
+
+
+
+*
+* *
+* * *
+* * * *
+* * * * *
+
+condition of the inner loop will depend on the outer loop counter
+
+
+Task 1:
+
+* * * * *
+* * * *
+* * *
+* *
+*
+
+condition
+
+code:
+
+   public class InvertedTriangle {
+    public static void main(String[] args) {
+        int height = 5; // height of the triangle
+        for (int i = height; i >= 1; i--) {
+            for (int j = 0; j < i; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
+----------------------------------------------
+
+Task 2:
+
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+
+
+public class Pyramid {
+      public static void main(String[] args) {
+        int height = 5; // height of the pyramid
+        for (int i = 1; i <= height; i++) {
+            for (int j = i; j < height; j++) {
+                System.out.print("  "); // print spaces
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+Another Solution:
+
+     for (int outCounter = 1; outCounter <= 5; outCounter++) {
+            for (int firstInnerCounter = outCounter; firstInnerCounter <=5 ; firstInnerCounter++) {
+                System.out.print("  ");
+            }
+            for (int secondInnerCounter = 1; secondInnerCounter <= outCounter ; secondInnerCounter++) {
+                System.out.print(" *");
+            }
+            System.out.println();
+        }
+
+
+
+
+
+-----------------------------------------------------
+Task 3:
+
+        *
+      * * *
+    * * * * *
+  * * * * * * *
+* * * * * * * * *
+  * * * * * * *
+    * * * * *
+      * * *
+        *
+
+
+sol:
+
+public class Diamond {
+    public static void main(String[] args) {
+        int height = 5; // height of the diamond
+        // Upper part of the diamond
+        for (int i = 1; i <= height; i++) {
+            for (int j = i; j < height; j++) {
+                System.out.print("  "); // print spaces
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+
+        // Lower part of the diamond
+        for (int i = height - 1; i >= 1; i--) {
+            for (int j = height; j > i; j--) {
+                System.out.print("  "); // print spaces
+            }
+            for (int k = 1; k <= (2 * i - 1); k++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
